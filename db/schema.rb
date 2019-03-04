@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_133019) do
+ActiveRecord::Schema.define(version: 2019_03_04_142805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "flats", force: :cascade do |t|
+    t.string "address"
+    t.string "description"
+    t.boolean "available", default: false
+    t.integer "bedrooms"
+    t.integer "rental_price"
+    t.integer "size"
+    t.integer "build_year"
+    t.string "letting_status"
+    t.integer "deposit_amount"
+    t.bigint "tenant_id"
+    t.bigint "landlord_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["landlord_id"], name: "index_flats_on_landlord_id"
+    t.index ["tenant_id"], name: "index_flats_on_tenant_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "comment"
+    t.bigint "flat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_reviews_on_flat_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +50,16 @@ ActiveRecord::Schema.define(version: 2019_03_04_133019) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "landlord", default: false
+    t.string "profile_pic"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "flats", "users", column: "landlord_id"
+  add_foreign_key "flats", "users", column: "tenant_id"
+  add_foreign_key "reviews", "flats"
 end
