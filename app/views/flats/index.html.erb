@@ -1,2 +1,17 @@
-<h1>Flats#index</h1>
+<h1>See all flats here</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
+<ul>
+ <% @flats.each do |flat| %>
+  <li>
+  <%= flat.address %>
+  <%= flat.bedrooms %>
+  <%= flat.rental_price %>
+  <%= flat.size %>
+  <%= flat.bedrooms %>
+  <% if @flats.empty? %>
+  <h2> No flats available </h2>
+  <% end %>
+
+  </li>
+<% end %>
+
