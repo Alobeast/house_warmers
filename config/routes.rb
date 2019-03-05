@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/new'
+  get 'reviews/create'
   get 'flats/new'
   get 'flats/create'
   get 'flats/edit'
