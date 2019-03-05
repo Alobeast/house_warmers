@@ -1,2 +1,25 @@
 <h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+
+<%= cl_image_tag @flat.photo1 %>
+<%= cl_image_tag @flat.photo2 %>
+<%= cl_image_tag @flat.photo3 %>
+<%= cl_image_tag @flat.photo4 %>
+<%= cl_image_tag @flat.photo5 %>
+
+<div>
+<p>Details:</p>
+<%= @flat.description %>
+
+
+<%= @flat.bedrooms %> <i class="fas fa-bed"></i>
+<%= @flat.bathrooms %> <i class="fas fa-bath"></i>
+<%= @flat.size %>m²
+</div>
+
+
+<%= simple_form_for @viewing do |f| %>
+  <%= f.hidden_field :flat_id %>
+  <%= f.input :message, :label => 'Your message' %>
+  <%= f.button :submit  %>
+<% end %>
+

@@ -6,6 +6,14 @@ class Flat < ApplicationRecord
   validates :address, uniqueness: true, presence: true
   enum letting_status: [ :pending, :confirmed, :declined]
 
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  mount_uploader :photo1, PhotoUploader
+  mount_uploader :photo2, PhotoUploader
+  mount_uploader :photo3, PhotoUploader
+  mount_uploader :photo4, PhotoUploader
+  mount_uploader :photo5, PhotoUploader
+
 end
