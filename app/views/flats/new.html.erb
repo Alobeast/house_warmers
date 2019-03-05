@@ -1,2 +1,16 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
+<h1>List a new property</h1>
+
+<%= simple_form_for @flat do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo1 %>
+  <%= f.input :photo1_cache, as: :hidden %>
+  <%= f.input :photo2 %>
+  <%= f.input :photo2_cache, as: :hidden %>
+  <%= f.input :photo3 %>
+  <%= f.input :photo3_cache, as: :hidden %>
+  <%= f.input :photo4 %>
+  <%= f.input :photo4_cache, as: :hidden %>
+  <%= f.input :photo5 %>
+  <%= f.input :photo5_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
