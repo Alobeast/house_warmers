@@ -5,4 +5,7 @@ class Flat < ApplicationRecord
   has_many :viewings, dependent: :destroy
   validates :address, uniqueness: true, presence: true
   enum letting_status: [ :pending, :confirmed, :declined]
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
