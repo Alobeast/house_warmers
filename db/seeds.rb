@@ -17,7 +17,7 @@ amir = User.create!(first_name:'Amir', last_name:'Yosef', email:'amir@gmail.com'
 
 
 # Flats
-flat1 = Flat.create!(address:'Korte Bergstraat 2B, 3811 ML Amersfoort', bedrooms:1, size:42, build_year:1985, deposit_amount:1000, description:
+flat1 = Flat.create!(address:'Korte Bergstraat 2B, Amersfoort', bedrooms:1, size:42, build_year:1985, deposit_amount:1000, description:
   'Charming 1 bedroom apartment with a large bedroom and plenty of storage space.
   The apartment is in a quiet street close to many amenities and a 10min walk to
   Amersfoort train station.', rental_price:900, landlord:laura, tenant:killian, bathrooms:1,
@@ -27,7 +27,7 @@ flat1 = Flat.create!(address:'Korte Bergstraat 2B, 3811 ML Amersfoort', bedrooms
   remote_photo4_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1D.jpg',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1E.jpg')
 
-flat2 = Flat.create!(address:'Korte Prinsengracht 24, 1013 GS Amsterdam',
+flat2 = Flat.create!(address:'Korte Prinsengracht 24, Amsterdam',
   bedrooms:2, size:85, build_year:1964, deposit_amount:1800, description:
   'Modern 2 bedroom apartment in central Amsterdam. The apartment boasts
   2 double sized bedrooms, a large bathroom with bath shower and a separate
@@ -35,7 +35,7 @@ flat2 = Flat.create!(address:'Korte Prinsengracht 24, 1013 GS Amsterdam',
   minute walk to Amsterdam Centraal station and has plenty of shops and restuarants
   close by.', rental_price:2100, landlord:marc, tenant:filippo, bathrooms:1)
 
-flat3 = Flat.create!(address:'Baarsjesweg 192B, 1057 HR Amsterdam',
+flat3 = Flat.create!(address:'Baarsjesweg 192B, Amsterdam',
   bedrooms:2, size:82, build_year:1958, deposit_amount:2000, description:
   'Recently renovated 2 bedroom apartment in the heart of Oud West. The apartment
   was renovated in 2017 and boasts a modern and sleek finish. Plenty of
