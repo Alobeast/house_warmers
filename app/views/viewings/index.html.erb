@@ -1,0 +1,11 @@
+<h1>Salut les PEDES</h1>
+
+  <ul>
+    <% @viewings.each do |viewing| %>
+    <li>
+      <p>Message for: <%= viewing.landlord.first_name %></p>
+      <p>Your message: <%= viewing.message %></p>
+      <p>address: <%= viewing.flat.address %> </p>
+    </li>
+    <% end %>
+  </ul>
