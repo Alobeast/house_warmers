@@ -3,6 +3,7 @@
 <ul>
  <% @flats.each do |flat| %>
   <li>
+
   Address is <%= flat.address %>
   Number of bedrooms: <%= flat.bedrooms %>
   Price: <%= flat.rental_price %>
@@ -11,8 +12,6 @@
   <%= review.rating %>
   <% end %>
 
-
-
   <% if @flats.empty? %>
   <h2> No flats available </h2>
   <% end %>
@@ -20,3 +19,10 @@
   </li>
 <% end %>
 
+<div
+  id="map"
+  style="width: 50%;
+  height: 450px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>

@@ -1,4 +1,15 @@
 class FlatsController < ApplicationController
+  def index
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+
+    @markers = @flats.map do |flat|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude
+      }
+    end
+  end
+
   def new
     @flat = Flat.new
   end
@@ -17,12 +28,9 @@ class FlatsController < ApplicationController
     @flat.save
   end
 
-  def index
-    @flats = Flat.all
-  end
-
   def show
     @flat = Flat.find(params[:id])
+    @viewing = Viewing.new(flat: @flat)
   end
 
   private
