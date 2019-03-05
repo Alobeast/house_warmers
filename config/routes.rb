@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :index, :new]
 
 
+  resources :viewings, only: [:index, :new, :create]
 end
