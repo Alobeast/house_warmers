@@ -10,6 +10,8 @@ class Review < ApplicationRecord
   validates :landlord_rating, inclusion: {in: RATINGS}
   validates :plumbing_rating, inclusion: {in: RATINGS}
 
+  mount_uploader :proof_pic, PhotoUploader
+
   attribute :address
   before_validation :set_address
 

@@ -1,6 +1,6 @@
 Flat.destroy_all
-User.destroy_all
 Review.destroy_all
+User.destroy_all
 
 # Landlords
 laura = User.create!(first_name:'Laura', last_name:'Meyer', email:'laura@gmail.com',
