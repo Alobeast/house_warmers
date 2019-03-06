@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   resources :flats, except: [:edit, :update] do
     resources :reviews, only: [:create, :index, :new]
   end
-
   resources :viewings, only: [:index, :new, :create]
 end

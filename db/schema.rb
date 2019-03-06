@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_105625) do
+ActiveRecord::Schema.define(version: 2019_03_05_142640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 2019_03_05_105625) do
     t.bigint "landlord_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo1"
+    t.string "photo2"
+    t.string "photo3"
+    t.string "photo4"
+    t.string "photo5"
+    t.integer "bathrooms"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["landlord_id"], name: "index_flats_on_landlord_id"
     t.index ["tenant_id"], name: "index_flats_on_tenant_id"
   end
@@ -39,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_105625) do
     t.bigint "flat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tenant_id"
     t.index ["flat_id"], name: "index_reviews_on_flat_id"
   end
 
@@ -74,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_105625) do
   add_foreign_key "flats", "users", column: "landlord_id"
   add_foreign_key "flats", "users", column: "tenant_id"
   add_foreign_key "reviews", "flats"
+  add_foreign_key "reviews", "users", column: "tenant_id"
   add_foreign_key "viewings", "flats"
   add_foreign_key "viewings", "users", column: "landlord_id"
   add_foreign_key "viewings", "users", column: "tenant_id"
