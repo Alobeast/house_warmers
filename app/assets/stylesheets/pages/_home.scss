@@ -1,1 +1,73 @@
-// Specific CSS for your home-page
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+}
+
+#menu {
+  float: right;
+}
+
+.container.home{
+  background-image: url(https://wallpapershome.com/images/pages/pic_h/4407.jpg);
+  background-attachment: fixed;
+  position: relative; top: 0; overflow:scroll;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 100%;
+  height: 700px;
+  z-index: 0;
+  top: 0;
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  text-align: center;
+  padding: 70px 30px;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px #222222 solid;
+  color: #222222;
+  padding: 15px 32px;
+  text-align: center;font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.icon-calendar {
+  font-family: 'untitled-font-1';
+  color: #c6aaa1;}
+
+  .icon-map-marker {
+    font-family: 'untitled-font-1';
+    color: #b2c1cb;}
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      line-height: 15px;
+      font-style: italic;
+      font-weight: 400;
+      color: #b5b5b5;
+
+    }
+
