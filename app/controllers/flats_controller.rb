@@ -1,12 +1,13 @@
 class FlatsController < ApplicationController
   def index
     @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @markers = create_marker(@flats)
 
-    @markers = @flats.map do |flat|
-      {
-        lng: flat.longitude,
-        lat: flat.latitude
-      }
+    @rental_price = params[:rental_price]
+
+    if @rental_price.present?
+      @flats = @flats.where("rental_price < ?", @rental_price)
+      @markers = create_marker(@flats)
     end
   end
 
@@ -33,7 +34,17 @@ class FlatsController < ApplicationController
     @viewing = Viewing.new(flat: @flat)
   end
 
+
   private
+
+  def create_marker(flats)
+    flats.map do |flat|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude
+      }
+    end
+  end
 
   def flat_params
     params.require(:flat).permit(:address)
