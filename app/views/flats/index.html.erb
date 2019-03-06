@@ -1,5 +1,21 @@
 <h1>See all flats here</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
+
+
+<%= form_tag flats_path, method: :get do %>
+
+  <%= label_tag(:q, 'pour moins de')%>
+  <% price = ["", 250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250] %>
+  <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
+  <%= label_tag(:q, "") %>
+
+
+  <%= submit_tag "Search"%>
+  <%= link_to "Remove filter", flats_path%>
+  <% end %>
+
+
+
 <ul>
  <% @flats.each do |flat| %>
   <li>
