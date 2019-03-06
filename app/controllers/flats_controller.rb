@@ -4,9 +4,15 @@ class FlatsController < ApplicationController
     @markers = create_marker(@flats)
 
     @rental_price = params[:rental_price]
+    @size = params[:size]
 
     if @rental_price.present?
-      @flats = @flats.where("rental_price < ?", @rental_price)
+      @flats = @flats.where("rental_price <= ?", @rental_price)
+      @markers = create_marker(@flats)
+    end
+
+    if @size.present?
+      @flats = @flats.where("size >= ?", @size)
       @markers = create_marker(@flats)
     end
   end

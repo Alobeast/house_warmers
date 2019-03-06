@@ -60,7 +60,7 @@ flat2 = Flat.create!(address:'Korte Prinsengracht 24, Amsterdam',
   2 double sized bedrooms, a large bathroom with bath shower and a separate
   toilet room. Modern kitchen with plenty of natural light. The apartment is a 10
   minute walk to Amsterdam Centraal station and has plenty of shops and restuarants
-  close by.', rental_price:2100, landlord:marc, tenant:filippo, bathrooms:1,
+  close by.', rental_price:1900, landlord:marc, tenant:filippo, bathrooms:1,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2C.jpg',
@@ -72,7 +72,7 @@ flat3 = Flat.create!(address:'Baarsjesweg 192B, Amsterdam',
   'Recently renovated 2 bedroom apartment in the heart of Oud West. The apartment
   was renovated in 2017 and boasts a modern and sleek finish. Plenty of
   storage and 2 large bedrooms. The bathroom has a large rain shower and separate
-  his and her basins. 5min walk to the metro.', rental_price:2400, landlord:alois, tenant:amir, bathrooms:2,
+  his and her basins. 5min walk to the metro.', rental_price:1950, landlord:alois, tenant:amir, bathrooms:2,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3C.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3A.jpg',
@@ -94,14 +94,14 @@ flat4 = Flat.create!(address:'Sarphatipark 34, Amsterdam',
 flat5 = Flat.create!(address:'Tuinstraat 11, Amsterdam',
   bedrooms:2, size:102, build_year:1975, deposit_amount:2500, description:
   'Jordaan apartment close to the nine streets and the famous canals. This is a two bedroom one
-  bathroom apartment with a modern finish.', rental_price:24600, landlord:shivani, tenant:carmen, bathrooms:2,
+  bathroom apartment with a modern finish.', rental_price:2600, landlord:shivani, tenant:carmen, bathrooms:2,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5C.jpg',
   remote_photo4_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5D.jpg',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5E.jpg')
 
-flat6 = Flat.create!(address:'Stalperstraat 14, Amsterdam',
+flat6 = Flat.create!(address:'Daniël Stalpertstraat 14, Amsterdam',
   bedrooms:1, size:48, build_year:1972, deposit_amount:1800, description:
   'Modern and large one bedroom in the heart of the trendy de Pojp area. Close to the metro with plenty of
   shops and cafes on its doorstep. The apartment is close to the metro and is offered unfurnished.
@@ -116,7 +116,7 @@ flat7 = Flat.create!(address:'Den Texstraat 8, Amsterdam',
   bedrooms:2, size:88, build_year:1975, deposit_amount:2400, description:
   'Ground floor 2 bedroom apartment with a shared bathroom. Modern and sleek interior with a small
   back patio perfect for a sunny day. The apartment comes fully furnished with dishwasher, dryer and
-  washing machine.', rental_price:2400, landlord:charlotte, tenant:kevin, bathrooms:1,
+  washing machine.', rental_price:2500, landlord:charlotte, tenant:kevin, bathrooms:1,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7C.jpg',
@@ -141,7 +141,7 @@ flat9 = Flat.create!(address:'Wilhelminastraat 22, Amsterdam',
   bathroom apartment is offered fully furnished complete with dishwasher, dryer and washing machine. Both bedrooms
   are double bedrooms with ample storage space and modern furnishings. This apartment is on the top floor of
   a 4 storey building.',
-  rental_price:2400, landlord:abi, tenant:carly, bathrooms:2,
+  rental_price:2100, landlord:abi, tenant:carly, bathrooms:2,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9C.jpg',
@@ -153,7 +153,7 @@ flat10 = Flat.create!(address:'Kerkstraat 322, Amsterdam',
   'Clean smart apartment with wonderful west-facing views over the canals.
   Wood floors, open plan kitchen, large double bed bedrooms, sofa, shower room and matching furnishings.
   There is a washing machine downstairs within the building.',
-  rental_price:2400, landlord:matthew, tenant:rakan, bathrooms:1,
+  rental_price:2700, landlord:matthew, tenant:rakan, bathrooms:1,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10C.jpg',

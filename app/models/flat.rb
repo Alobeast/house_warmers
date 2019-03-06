@@ -17,8 +17,8 @@ class Flat < ApplicationRecord
   mount_uploader :photo5, PhotoUploader
 
 include PgSearch
-  pg_search_scope :search_by_rental_price,
-  against: [:rental_price],
+  pg_search_scope :search_by_rental_price_and_size,
+  against: [:rental_price, :size],
   using: {
     tsearch: { prefix: true }
   }
