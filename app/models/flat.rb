@@ -1,6 +1,6 @@
 class Flat < ApplicationRecord
-  belongs_to :landlord, class_name: 'User'
-  belongs_to :tenant, class_name: 'User'
+  belongs_to :landlord, class_name: 'User', optional: true
+  belongs_to :tenant, class_name: 'User', optional: true
   has_many :reviews, dependent: :destroy
   has_many :viewings, dependent: :destroy
   validates :address, uniqueness: true, presence: true
