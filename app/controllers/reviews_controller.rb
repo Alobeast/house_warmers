@@ -10,7 +10,12 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.tenant = current_user
-    @review.save!
+
+    if @review.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
