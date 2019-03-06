@@ -1,5 +1,4 @@
-//= require rails-ujs
-//= require_tree .
+
 // function run(interval, frames) {
 //     var int = 1;
 
