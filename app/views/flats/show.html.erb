@@ -1,26 +1,38 @@
 <h1>Flats#show</h1>
 
-<%= cl_image_tag @flat.photo1 %>
-<%= cl_image_tag @flat.photo2 %>
-<%= cl_image_tag @flat.photo3 %>
-<%= cl_image_tag @flat.photo4 %>
-<%= cl_image_tag @flat.photo5 %>
+<div>
+  <%= cl_image_tag @flat.photo1 %>
+  <%= cl_image_tag @flat.photo2 %>
+  <%= cl_image_tag @flat.photo3 %>
+  <%= cl_image_tag @flat.photo4 %>
+  <%= cl_image_tag @flat.photo5 %>
+</div>
 
 <div>
-<p>Details:</p>
-<%= @flat.description %>
+  <p>Details:</p>
+  <%= @flat.description %>
+  <%= @flat.bedrooms %> <i class="fas fa-bed"></i>
+  <%= @flat.bathrooms %> <i class="fas fa-bath"></i>
+  <%= @flat.size %>m²
+</div>
 
-
-<%= @flat.bedrooms %> <i class="fas fa-bed"></i>
-<%= @flat.bathrooms %> <i class="fas fa-bath"></i>
-<%= @flat.size %>m²
+<div>
+  <p>Reviews</p>
+  <% if @flat.reviews.empty? %>
+      <p>There are no reviews for this apartment yet</p>
+    <% else %>
+      <% @flat.reviews.each do |review| %>
+      <%= review.rating %>
+      <%= review.comment %>
+      <% end %>
+  <% end %>
 </div>
 
 <div
   id="map"
   style="width: 20%;
   height: 250px;"
-  data-markers="<%= @marker.to_json %>"
+  data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
