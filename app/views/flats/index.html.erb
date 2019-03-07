@@ -12,11 +12,19 @@
   <%= label_tag(:q, "Minimum size") %>
   <% size = ["", 25, 50, 75, 100, 125, 150] %>
   <%= select_tag "size", options_for_select(size, @size) %>
+  <%= label_tag(:q, "") %>
+
+  <%= label_tag(:q, "Where?") %>
+  <% select_tag "location" %>
+  <%= text_field_tag :location, params[:location]%>
+
+  <%= label_tag(:q, "Minimum rating") %>
+  <% rating = ["", 0, 1, 2, 3, 4, 5] %>
+  <%= select_tag "rating", options_for_select(rating, @rating) %>
 
   <%= submit_tag "Search"%>
   <%= link_to "Remove filter", flats_path%>
 <% end %>
-
 
 
 <ul>
