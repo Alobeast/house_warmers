@@ -38,6 +38,7 @@
   <% flat.reviews.each do |review| %>
   <%= review.rating %>
   <% end %>
+  <%= link_to "details", flat_path(flat.id) %>
 
   <% if @flats.empty? %>
   <h2> No flats available </h2>

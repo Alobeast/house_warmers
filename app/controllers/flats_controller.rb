@@ -19,7 +19,7 @@ class FlatsController < ApplicationController
     end
 
     if @location.present?
-      @flats = @flats.near(@location, 10)
+      @flats = @flats.near(@location, 5)
       @markers = create_marker(@flats)
     end
 
