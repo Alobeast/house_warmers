@@ -14,12 +14,15 @@ class User < ApplicationRecord
     graph = Koala::Facebook::API.new(access_token)
     Rails.logger.info "Me:" + graph.get_object("me").inspect
     friends = graph.get_connections("me", "friends")
-    self.friends = friends
     Rails.logger.info "Friends: " + friends.inspect
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+
+    user = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
     end
+
+    user.friends = friends
+    return user
   end
 
   def is_friends_with?(other_user)
