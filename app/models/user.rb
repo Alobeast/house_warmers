@@ -7,4 +7,27 @@ class User < ApplicationRecord
   has_many :viewings_as_landlord, foreign_key: :landlord_id, class_name: 'Viewing'
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: %i[facebook]
+
+  def self.from_omniauth(auth)
+    access_token = auth.credentials.token
+    graph = Koala::Facebook::API.new(access_token)
+    Rails.logger.info "Me:" + graph.get_object("me").inspect
+    friends = graph.get_connections("me", "friends")
+    self.friends = friends
+    Rails.logger.info "Friends: " + friends.inspect
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
+
+  def is_friends_with?(other_user)
+    friends.each do |friend|
+      if friend["id"] == other_user.uid
+        return true
+      end
+    end
+    return false
+  end
 end

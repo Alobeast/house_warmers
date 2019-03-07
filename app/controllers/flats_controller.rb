@@ -38,11 +38,11 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @viewing = Viewing.new(flat: @flat)
-    @marker =
+    @markers = [
       {
         lng: @flat.longitude,
         lat: @flat.latitude
-      }
+      }]
   end
 
 

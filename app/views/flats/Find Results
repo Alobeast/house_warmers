@@ -1,0 +1,9 @@
+Searching 170 files for "debugger"
+
+/Users/catherinespyropoulos/code/CatCat10/house_warmers/app/models/user.rb:
+   11
+   12  def self.from_omniauth(auth)
+   14    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+   15      user.email = auth.info.email
+
+1 match in 1 file
