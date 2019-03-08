@@ -12,9 +12,7 @@ class ReviewsController < ApplicationController
     @review.tenant = current_user
     @flats = Flat.where(address: params[:review][:address])
 
-
     @review.flat_id = @flats.first.id if !@flats.blank?
-
     if @review.save
       redirect_to root_path
     else
