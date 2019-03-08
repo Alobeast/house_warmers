@@ -23,7 +23,7 @@
   <%= submit_tag "Search"%>
   <%= link_to "Remove filter", flats_path%>
 <% end %>
- -->
+-->
 
 
 <!-- <ul>
@@ -45,7 +45,7 @@
 
   </li>
 <% end %>
- -->
+-->
 
 
 
@@ -81,77 +81,75 @@
             </div>
         </form>
     </div>
-</section> -->
+  </section> -->
 
-<div class="content">
-  <div class="card container">
-    <div>
-      <%= form_tag flats_path, method: :get do %>
+  <div class="content">
+    <div class="card container">
+      <div>
+        <%= form_tag flats_path, method: :get do %>
 
-  <%= label_tag(:q, 'Budget maximum')%>
-  <% price = ["", 500, 1000, 1500, 2000, 2500] %>
-  <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
-  <%= label_tag(:q, "") %>
+        <%= label_tag(:q, 'Budget maximum')%>
+        <% price = ["", 500, 1000, 1500, 2000, 2500] %>
+        <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
+        <%= label_tag(:q, "") %>
 
-  <%= label_tag(:q, "Minimum size") %>
-  <% size = ["", 25, 50, 75, 100, 125, 150] %>
-  <%= select_tag "size", options_for_select(size, @size) %>
-  <%= label_tag(:q, "") %>
+        <%= label_tag(:q, "Minimum size") %>
+        <% size = ["", 25, 50, 75, 100, 125, 150] %>
+        <%= select_tag "size", options_for_select(size, @size) %>
+        <%= label_tag(:q, "") %>
 
-  <%= label_tag(:q, "Where?") %>
-  <% select_tag "location" %>
-  <%= text_field_tag :location, params[:location]%>
+        <%= label_tag(:q, "Where?") %>
+        <% select_tag "location" %>
+        <%= text_field_tag :location, params[:location]%>
 
-  <%= label_tag(:q, "Minimum rating") %>
-  <% rating = ["", 0, 1, 2, 3, 4, 5] %>
-  <%= select_tag "rating", options_for_select(rating, @rating) %>
+        <%= label_tag(:q, "Minimum rating") %>
+        <% rating = ["", 0, 1, 2, 3, 4, 5] %>
+        <%= select_tag "rating", options_for_select(rating, @rating) %>
 
-  <%= submit_tag "Search"%>
-  <%= link_to "Remove filter", flats_path%>
-<% end %>
-    </div>
+        <%= submit_tag "Search"%>
+        <%= link_to "Remove filter", flats_path%>
+        <% end %>
+      </div>
 
-  <% @flats.each_with_index do |flat, index| %>
+      <% @flats.each_with_index do |flat, index| %>
 
-  <div class="blog-card" id= "<%=index %>">
-    <div class="meta">
-      <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
-      <ul class="details">
+      <div class="blog-card" id= "<%=index %>">
+        <div class="meta">
+          <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
+          <ul class="details">
 
-        <li class="fas fa-euro-sign">:<%= flat.rental_price %></li>
-        <br>
-        <li class="fas fa-bed">:<%= flat.bedrooms %></li>
-        <br>
-        <li class="fas fa-expand-arrows-alt">:<%= flat.size %>m²</li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1 ><%= flat.address %></h1>
-      <h2>Opening a door to the future</h2>
-      <p> <%= flat.description %></p>
-      <p class="read-more">
+            <li class="fas fa-euro-sign">:<%= flat.rental_price %></li>
+            <br>
+            <li class="fas fa-bed">:<%= flat.bedrooms %></li>
+            <br>
+            <li class="fas fa-expand-arrows-alt">:<%= flat.size %>m²</li>
+          </ul>
+        </div>
+        <div class="description">
+          <h1 ><%= flat.address %></h1>
 
-        <a href="#">Details</a>
-        <a href="#"><% flat.reviews.each do |review| %>
- <a href="#">
+          <p> <%= flat.description %></p>
+          <p class="read-more">
+
+            <%= link_to "Details", flat_path(flat.id)  %>
+
+          </p>
+
           <%= flat.average_rating == 0 ? "" : flat.average_rating %>
-        </a>
-  <% end %></a>
 
-      </p>
+        </div>
+      </div>
+
+      <% end %>
     </div>
-  </div>
 
-  <% end %>
-  </div>
+    <div
+    id="map"
 
-<div
-  id="map"
-
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  </div>
+</div>
 
 
 <!-- <div class="footer1">
