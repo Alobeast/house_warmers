@@ -4,9 +4,15 @@ class ViewingsController < ApplicationController
   end
 
   def create
+
+
     @viewing = Viewing.new(viewing_params)
+    flat = Flat.find(params[:viewing][:flat_id].to_i)
+    @viewing.flat = flat
     @viewing.landlord = @viewing.flat.landlord
     @viewing.tenant = current_user
+    @viewing.save
+    redirect_to viewings_path
   end
 
   private

@@ -17,7 +17,7 @@ class Review < ApplicationRecord
 
   def set_address
     if self.flat.nil?
-      self.flat = Flat.new(address: address)
+      self.flat = Flat.new(address: address, letting_status: "pending")
     end
   end
 
