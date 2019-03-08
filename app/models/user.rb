@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :tenancies_as_tenant, foreign_key: :tenant_id, class_name: 'Tenancy'
 
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
