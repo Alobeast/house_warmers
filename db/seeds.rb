@@ -42,12 +42,12 @@ david = User.create!(first_name:'David', last_name:'Santos', email:'david@gmail.
 frederik = User.create!(first_name:'Frederik', last_name:'Blanc', email:'frederik@gmail.com', password:'111111')
 mitch = User.create!(first_name:'Mitch', last_name:'Thomas', email:'mitch@gmail.com', password:'111111')
 michelle = User.create!(first_name:'Michelle', last_name:'Stott', email:'michelle@gmail.com', password:'111111')
-
+alois = User.create!(email: "alois.beard@laposte.net", username: nil, first_name: 'Alois', last_name: 'Beard', password:'111111', profile_pic: nil, provider: "facebook", uid: "10157089276935030", friends: [{"id"=>"10155944089180927", "name"=>"Catherine Spyropoulos"}])
 # Flats
-flat1 = Flat.create!(address:'Korte Bergstraat 2B, Amersfoort', bedrooms:1, size:42, build_year:1985, deposit_amount:1000, description:
+flat1 = Flat.create!(address:'Korte Bergstraat 2B, Amersfoort', bedrooms:1, size:42, build_year:1985, price_cents:1000, description:
   'Charming 1 bedroom apartment with a large bedroom and plenty of storage space.
   The apartment is in a quiet street close to many amenities and a 10min walk to
-  Amersfoort train station.', rental_price:900, landlord:laura, tenant:killian, bathrooms:1,
+  Amersfoort train station.', rental_price:900, landlord:laura, tenant:killian, bathrooms:1, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1C.jpg',
@@ -55,12 +55,12 @@ flat1 = Flat.create!(address:'Korte Bergstraat 2B, Amersfoort', bedrooms:1, size
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment1E.jpg')
 
 flat2 = Flat.create!(address:'Korte Prinsengracht 24, Amsterdam',
-  bedrooms:2, size:85, build_year:1964, deposit_amount:1800, description:
+  bedrooms:2, size:85, build_year:1964, price_cents:1800, description:
   'Modern 2 bedroom apartment in central Amsterdam. The apartment boasts
   2 double sized bedrooms, a large bathroom with bath shower and a separate
   toilet room. Modern kitchen with plenty of natural light. The apartment is a 10
   minute walk to Amsterdam Centraal station and has plenty of shops and restuarants
-  close by.', rental_price:1900, landlord:marc, tenant:filippo, bathrooms:1,
+  close by.', rental_price:1900, landlord:marc, tenant:filippo, bathrooms:1, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2C.jpg',
@@ -68,11 +68,11 @@ flat2 = Flat.create!(address:'Korte Prinsengracht 24, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment2E.jpg')
 
 flat3 = Flat.create!(address:'Baarsjesweg 192B, Amsterdam',
-  bedrooms:2, size:82, build_year:1958, deposit_amount:2000, description:
+  bedrooms:2, size:82, build_year:1958, price_cents:2000, description:
   'Recently renovated 2 bedroom apartment in the heart of Oud West. The apartment
   was renovated in 2017 and boasts a modern and sleek finish. Plenty of
   storage and 2 large bedrooms. The bathroom has a large rain shower and separate
-  his and her basins. 5min walk to the metro.', rental_price:1950, landlord:alois, tenant:amir, bathrooms:2,
+  his and her basins. 5min walk to the metro.', rental_price:1950, landlord:alois, tenant:amir, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3C.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3A.jpg',
@@ -80,11 +80,11 @@ flat3 = Flat.create!(address:'Baarsjesweg 192B, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment3E.jpg')
 
 flat4 = Flat.create!(address:'Sarphatipark 34, Amsterdam',
-  bedrooms:2, size:122, build_year:1975, deposit_amount:2400, description:
+  bedrooms:2, size:122, build_year:1975, price_cents:2400, description:
   'Large 2 bedroom apartment right by City Park. The apartment is a 2 bedroom 2 bathroom aparmtent
   with generous storage space and a recently refurbished kitchen. Close to the local cafes and shops and
   a 3 min walk to the metro. The apartment is furnished and available immediately', rental_price:2400, landlord:catherine,
-  tenant:tinco, bathrooms:2,
+  tenant:tinco, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4C.jpg',
@@ -92,9 +92,9 @@ flat4 = Flat.create!(address:'Sarphatipark 34, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4E.jpg')
 
 flat5 = Flat.create!(address:'Tuinstraat 11, Amsterdam',
-  bedrooms:2, size:102, build_year:1975, deposit_amount:2500, description:
+  bedrooms:2, size:102, build_year:1975, price_cents:2500, description:
   'Jordaan apartment close to the nine streets and the famous canals. This is a two bedroom one
-  bathroom apartment with a modern finish.', rental_price:2600, landlord:shivani, tenant:carmen, bathrooms:2,
+  bathroom apartment with a modern finish.', rental_price:2600, landlord:shivani, tenant:carmen, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5C.jpg',
@@ -102,10 +102,10 @@ flat5 = Flat.create!(address:'Tuinstraat 11, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment5E.jpg')
 
 flat6 = Flat.create!(address:'Daniël Stalpertstraat 14, Amsterdam',
-  bedrooms:1, size:48, build_year:1972, deposit_amount:1800, description:
+  bedrooms:1, size:48, build_year:1972, price_cents:1800, description:
   'Modern and large one bedroom in the heart of the trendy de Pojp area. Close to the metro with plenty of
   shops and cafes on its doorstep. The apartment is close to the metro and is offered unfurnished.
-  ', rental_price:2400, landlord:natasha, tenant:tristin, bathrooms:1,
+  ', rental_price:2400, landlord:natasha, tenant:tristin, bathrooms:1, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment6A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment6B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment6C.jpg',
@@ -113,10 +113,10 @@ flat6 = Flat.create!(address:'Daniël Stalpertstraat 14, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment6E.jpg')
 
 flat7 = Flat.create!(address:'Den Texstraat 8, Amsterdam',
-  bedrooms:2, size:88, build_year:1975, deposit_amount:2400, description:
+  bedrooms:2, size:88, build_year:1975, price_cents:2400, description:
   'Ground floor 2 bedroom apartment with a shared bathroom. Modern and sleek interior with a small
   back patio perfect for a sunny day. The apartment comes fully furnished with dishwasher, dryer and
-  washing machine.', rental_price:2500, landlord:charlotte, tenant:kevin, bathrooms:1,
+  washing machine.', rental_price:2500, landlord:charlotte, tenant:kevin, bathrooms:1, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7C.jpg',
@@ -124,11 +124,11 @@ flat7 = Flat.create!(address:'Den Texstraat 8, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment7E.jpg')
 
 flat8 = Flat.create!(address:'Elisabeth Wolffstraat 10, Amsterdam',
-  bedrooms:2, size:122, build_year:1935, deposit_amount:2200, description:
+  bedrooms:2, size:122, build_year:1935, price_cents:2200, description:
   'Recently renovated 2 bedroom apartment in the heart of Oud West. The apartment
   was renovated in 2017 and boasts a modern and sleek finish. Plenty of
   storage and 2 large bedrooms. The bathroom has a large rain shower and separate
-  his and her basins. 5min walk to the metro.', rental_price:2400, landlord:daniel, tenant:anthony, bathrooms:2,
+  his and her basins. 5min walk to the metro.', rental_price:2400, landlord:daniel, tenant:anthony, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8C.jpg',
@@ -136,12 +136,12 @@ flat8 = Flat.create!(address:'Elisabeth Wolffstraat 10, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8E.jpg')
 
 flat9 = Flat.create!(address:'Wilhelminastraat 22, Amsterdam',
-  bedrooms:2, size:92, build_year:1982, deposit_amount:2000, description:
+  bedrooms:2, size:92, build_year:1982, price_cents:2000, description:
   'Stunning apartment in central Amsterdam close to all the major transport links. This two bedroom two
   bathroom apartment is offered fully furnished complete with dishwasher, dryer and washing machine. Both bedrooms
   are double bedrooms with ample storage space and modern furnishings. This apartment is on the top floor of
   a 4 storey building.',
-  rental_price:2100, landlord:abi, tenant:carly, bathrooms:2,
+  rental_price:2100, landlord:abi, tenant:carly, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9C.jpg',
@@ -149,11 +149,11 @@ flat9 = Flat.create!(address:'Wilhelminastraat 22, Amsterdam',
   remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment9E.jpg')
 
 flat10 = Flat.create!(address:'Kerkstraat 322, Amsterdam',
-  bedrooms:2, size:108, build_year:1960, deposit_amount:2100, description:
+  bedrooms:2, size:108, build_year:1960, price_cents:2100, description:
   'Clean smart apartment with wonderful west-facing views over the canals.
   Wood floors, open plan kitchen, large double bed bedrooms, sofa, shower room and matching furnishings.
   There is a washing machine downstairs within the building.',
-  rental_price:2700, landlord:matthew, tenant:rakan, bathrooms:1,
+  rental_price:2700, landlord:matthew, tenant:rakan, bathrooms:1, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10C.jpg',
@@ -172,5 +172,9 @@ review9 = Review.create!(rating:3, comment:'Huge damp problem in the flat.', fla
 review10 = Review.create!(rating:5, comment:'Perfect flat in the perfect location. Had absolutely no problem with this flat in all 3 years I lived there.', flat:flat8, tenant:tristin,  area_rating: 5, noise_rating: 5, condition_rating: 5, energy_rating: 5, landlord_rating: 5, plumbing_rating: 5)
 review11 = Review.create!(rating:5, comment:"Amazing flat and great landlord! Can't ask for a better location.", flat:flat1, tenant:romy,  area_rating: 5, noise_rating: 5, condition_rating: 4, energy_rating: 4, landlord_rating: 5, plumbing_rating: 5)
 review12 = Review.create!(rating:2, comment:'Although this is a great looking flat, there is a huge heating problem. The water is only hot for small bursts of time so most of the showers I had when living there were cold. I eventually resorted to showering at the office or at the gym to avoid freezing.', flat:flat9, tenant:carmen,  area_rating: 4, noise_rating: 4, condition_rating: 3, energy_rating: 2, landlord_rating: 3, plumbing_rating: 2)
+
+# Tenancies
+
+tenancy1 = Tenancy.create!(flat:flat3, user:alois)
 
 

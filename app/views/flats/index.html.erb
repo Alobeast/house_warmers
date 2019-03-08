@@ -1,5 +1,4 @@
 
-
 <!--
 <%= form_tag flats_path, method: :get do %>
 
@@ -26,6 +25,7 @@
 <% end %>
  -->
 
+
 <!-- <ul>
  <% @flats.each do |flat| %>
   <li>
@@ -46,6 +46,7 @@
   </li>
 <% end %>
  -->
+
 
 
 
@@ -129,10 +130,14 @@
       <h2>Opening a door to the future</h2>
       <p> <%= flat.description %></p>
       <p class="read-more">
+
         <a href="#">Details</a>
         <a href="#"><% flat.reviews.each do |review| %>
-  <%= review.rating %>
+ <a href="#">
+          <%= flat.average_rating == 0 ? "" : flat.average_rating %>
+        </a>
   <% end %></a>
+
       </p>
     </div>
   </div>

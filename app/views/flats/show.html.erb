@@ -35,12 +35,8 @@
 </div>
 
 <div>
-  <ul class="description list">
-    <li><%= @flat.description %></li>
-    <li><%= @flat.bedrooms %> <i class="fas fa-bed"></i></li>
-    <li><%= @flat.bathrooms %> <i class="fas fa-bath"></i></li>
-    <li><%= @flat.size %>m²</li>
-  </ul>
+
+
 </div>
 </div>
 </div>
@@ -69,6 +65,25 @@
 
 
 <!-- <div>
+  <% if @lived_in.empty? %>
+    <p> None of your friends have lived in this apartment </p>
+  <% else %>
+    <% @lived_in.each do |friend| %>
+    <%= friend.first_name %> <p> has lived in this flat</p>
+    <% end %>
+  <% end %>
+
+
+  <% if @lived_close.empty? %>
+    <p> None of your friends have lived close by to this apartment </p>
+  <% else %>
+    <% @lived_close.each do |friend| %>
+    <%= friend.first_name %> <p> has lived close by!</p>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
   <%= cl_image_tag @flat.photo1 %>
   <%= cl_image_tag @flat.photo2 %>
   <%= cl_image_tag @flat.photo3 %>
@@ -88,27 +103,27 @@
 <div>
   <p>Reviews</p>
   <% if @flat.reviews.empty? %>
-      <p>There are no reviews for this apartment yet</p>
-    <% else %>
-      <% @flat.reviews.each do |review| %>
-      <%= review.rating %>
-      <%= review.comment %>
-      <% end %>
+  <p>There are no reviews for this apartment yet</p>
+  <% else %>
+  <% @flat.reviews.each do |review| %>
+  <%= review.rating %>
+  <%= review.comment %>
+  <% end %>
   <% end %>
 </div>
 
 <div
-  id="map"
-  style="width: 20%;
-  height: 250px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+id="map"
+style="width: 20%;
+height: 250px;"
+data-markers="<%= @markers.to_json %>"
+data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
 <%= simple_form_for @viewing do |f| %>
-  <%= f.hidden_field :flat_id %>
-  <%= f.input :message, :label => 'Your message' %>
-  <%= f.button :submit  %>
+<%= f.hidden_field :flat_id %>
+<%= f.input :message, :label => 'Your message' %>
+<%= f.button :submit  %>
 <% end %>
 
  -->
