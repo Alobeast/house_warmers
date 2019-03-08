@@ -1,7 +1,6 @@
-<!-- <h1>See all flats here</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
 
 
+<!--
 <%= form_tag flats_path, method: :get do %>
 
   <%= label_tag(:q, 'Budget maximum')%>
@@ -25,9 +24,9 @@
   <%= submit_tag "Search"%>
   <%= link_to "Remove filter", flats_path%>
 <% end %>
+ -->
 
-
-<ul>
+<!-- <ul>
  <% @flats.each do |flat| %>
   <li>
 
@@ -46,9 +45,9 @@
 
   </li>
 <% end %>
+ -->
 
 
--->
 
 <!-- <section class="search-sec">
     <div class="container">
@@ -85,29 +84,52 @@
 
 <div class="content">
   <div class="card container">
+    <div>
+      <%= form_tag flats_path, method: :get do %>
 
-  <% @flats.each do |flat| %>
+  <%= label_tag(:q, 'Budget maximum')%>
+  <% price = ["", 500, 1000, 1500, 2000, 2500] %>
+  <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
+  <%= label_tag(:q, "") %>
 
-  <div class="blog-card">
+  <%= label_tag(:q, "Minimum size") %>
+  <% size = ["", 25, 50, 75, 100, 125, 150] %>
+  <%= select_tag "size", options_for_select(size, @size) %>
+  <%= label_tag(:q, "") %>
+
+  <%= label_tag(:q, "Where?") %>
+  <% select_tag "location" %>
+  <%= text_field_tag :location, params[:location]%>
+
+  <%= label_tag(:q, "Minimum rating") %>
+  <% rating = ["", 0, 1, 2, 3, 4, 5] %>
+  <%= select_tag "rating", options_for_select(rating, @rating) %>
+
+  <%= submit_tag "Search"%>
+  <%= link_to "Remove filter", flats_path%>
+<% end %>
+    </div>
+
+  <% @flats.each_with_index do |flat, index| %>
+
+  <div class="blog-card" id= "<%=index %>">
     <div class="meta">
-      <div class="photo" style="background-image: url(https://www.fidorento.com/wp-content/uploads/2018/08/5-Ak%C5%9Fam-2.jpg)"></div>
+      <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
       <ul class="details">
-        <li class="fas fa-map-marker-alt">:<%= flat.address %></li>
-        <br>
 
         <li class="fas fa-euro-sign">:<%= flat.rental_price %></li>
         <br>
         <li class="fas fa-bed">:<%= flat.bedrooms %></li>
         <br>
-        <li class="fas fa-expand-arrows-alt">:<%= flat.size %></li>
+        <li class="fas fa-expand-arrows-alt">:<%= flat.size %>m²</li>
       </ul>
     </div>
     <div class="description">
-      <h1>Learning to Code</h1>
+      <h1 ><%= flat.address %></h1>
       <h2>Opening a door to the future</h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p> <%= flat.description %></p>
       <p class="read-more">
-        <a href="#">Read More</a>
+        <a href="#">Details</a>
         <a href="#"><% flat.reviews.each do |review| %>
   <%= review.rating %>
   <% end %></a>
@@ -127,7 +149,7 @@
   </div>
 
 
-<div class="footer1">
+<!-- <div class="footer1">
   <div id="button1"></div>
 <div id="container1">
 <div id="cont">
@@ -137,4 +159,4 @@
 </div>
 </div>
 
-</div>
+</div> -->
