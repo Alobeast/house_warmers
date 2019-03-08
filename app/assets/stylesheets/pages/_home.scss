@@ -1,4 +1,133 @@
-// Specific CSS for your home-page
-#b1 { background: url(background1.jpg); }
-#b2 { background: url(background2.jpg); }
-#b3 { background: url(background3.jpg); }
+
+body {
+  margin: 0;
+  padding: -10px;
+  // background-color: #eeeeee;
+}
+
+// #menu {
+//   float: right;
+// }
+.home-banner{
+  background-image: asset-url('Amsterdam2.png');
+  // background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2017/11/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg);
+  // background-attachment: fixed;
+  background-attachment: relative;
+  position: relative; top: 0; overflow:scroll;
+  background-repeat: 0;
+  background-size: 100% auto;
+  width: 100%;
+  height: 800px;
+  z-index: 0;
+  top: 0;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.one {
+    background-image: asset-url('Amsterdam2.png');
+  }
+
+  &.two {
+    background-image: asset-url('Amsterdam1.png');
+  }
+
+  &.three {
+    background-image: asset-url('Amsterdam3.png');
+  }
+
+  &.four {
+    background-image: asset-url('Amsterdam4.png');
+  }
+}
+
+.biglogo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 99;
+  top: 50%;
+}
+.no{
+  position: absolute;
+height: 40px;
+width: 161px;
+border-radius: 7px;
+  color: gray;
+top:65%;
+
+  margin-top: -13px;
+  margin-left: 1134px;
+
+}
+
+.row {
+  display: flex; /* equal height of the children */
+}
+
+.col {
+  flex: 1; /* additionally, equal width */
+  text-align: center;
+  padding: 70px 30px;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px #222222 solid;
+  color: #222222;
+  padding: 15px 32px;
+  text-align: center;font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+
+.icon-calendar {
+  font-family: 'untitled-font-1';
+  color: #c6aaa1;}
+
+  .icon-map-marker {
+    font-family: 'untitled-font-1';
+    color: #b2c1cb;}
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      line-height: 15px;
+      font-style: italic;
+      font-weight: 400;
+      color: #b5b5b5;
+
+    }
+    h3 {
+  font-family: 'Crimson Text', serif;
+  color: #F1AF06;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: -10px;
+  margin-left: 989px;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+}
+
+
