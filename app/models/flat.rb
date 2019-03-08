@@ -1,10 +1,12 @@
 class Flat < ApplicationRecord
+  STATUS = ["pending", "confirmed", "declined"]
   belongs_to :landlord, class_name: 'User', optional: true
   belongs_to :tenant, class_name: 'User', optional: true
   has_many :reviews, dependent: :destroy
   has_many :viewings, dependent: :destroy
+  has_many :orders
   validates :address, uniqueness: true, presence: true
-  enum letting_status: [ :pending, :confirmed, :declined]
+  validates :letting_status, inclusion: { in: STATUS }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -27,6 +29,6 @@ class Flat < ApplicationRecord
 #   using: {
 #     tsearch: { prefix: true }
 #   }
-
+  monetize :price_cents
 end
 
