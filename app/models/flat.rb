@@ -5,7 +5,7 @@ class Flat < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :tenancies, dependent: :destroy
   has_many :viewings, dependent: :destroy
-  has_many :orders
+  has_many :orders, dependent: :destroy
   validates :address, uniqueness: true, presence: true
   validates :letting_status, inclusion: { in: STATUS }
 
