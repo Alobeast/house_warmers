@@ -1,23 +1,65 @@
 body {
   margin: 0;
-  padding: 0;
-  background-color: #eeeeee;
+  padding: -10px;
+  // background-color: #eeeeee;
 }
 
-#menu {
-  float: right;
-}
-
-.container.home{
-  background-image: url(https://wallpapershome.com/images/pages/pic_h/4407.jpg);
-  background-attachment: fixed;
+// #menu {
+//   float: right;
+// }
+.home-banner{
+  background-image: asset-url('Amsterdam2.png');
+  // background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2017/11/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg);
+  // background-attachment: fixed;
+  background-attachment: relative;
   position: relative; top: 0; overflow:scroll;
-  background-repeat: no-repeat;
+  background-repeat: 0;
   background-size: 100% auto;
   width: 100%;
-  height: 700px;
+  height: 800px;
   z-index: 0;
   top: 0;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.one {
+    background-image: asset-url('Amsterdam2.png');
+  }
+
+  &.two {
+    background-image: asset-url('Amsterdam1.png');
+  }
+
+  &.three {
+    background-image: asset-url('Amsterdam3.png');
+  }
+
+  &.four {
+    background-image: asset-url('Amsterdam4.png');
+  }
+}
+
+.biglogo {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 99;
+  top: 50%;
+}
+.no{
+  position: absolute;
+height: 40px;
+width: 161px;
+border-radius: 7px;
+  color: gray;
+top:65%;
+
+  margin-top: -13px;
+  margin-left: 1134px;
+
 }
 
 .row {
@@ -44,6 +86,12 @@ body {
   margin: 4px 2px;
   cursor: pointer;
 }
+.button:hover {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
 
 .icon-calendar {
   font-family: 'untitled-font-1';
@@ -70,4 +118,14 @@ body {
       color: #b5b5b5;
 
     }
+    h3 {
+  font-family: 'Crimson Text', serif;
+  color: #F1AF06;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: -10px;
+  margin-left: 989px;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+}
 
