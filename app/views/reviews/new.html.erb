@@ -1,2 +1,45 @@
 <h1>Reviews#new</h1>
 <p>Find me in app/views/reviews/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div>
+        <h1>Write a review</h1>
+        <%= simple_form_for @review do |f| %>
+
+        <%= f.input :address %>
+
+        <%= f.input :proof_pic %>
+        <%= f.input :proof_pic_cache, as: :hidden %>
+
+        <div class="row">
+          <div class="col-xs-4">
+            <%= f.input :area_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+          <div class="col-xs-4">
+            <%= f.input :noise_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+          <div class="col-xs-4">
+            <%= f.input :condition_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= f.input :energy_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+          <div class="col-xs-4">
+            <%= f.input :landlord_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+          <div class="col-xs-4">
+            <%= f.input :plumbing_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          </div>
+        </div>
+          <%= f.input :comment, placeholder: "What did you think of this flat?" %>
+
+        <%= f.submit "add a review", class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
