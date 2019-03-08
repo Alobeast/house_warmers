@@ -1,6 +1,6 @@
 class ViewingsController < ApplicationController
   def index
-    @viewings = Viewing.all
+    @viewings = Viewing.where("tenant_id = ? OR landlord_id = ?", current_user.id,current_user.id)
   end
 
   def create

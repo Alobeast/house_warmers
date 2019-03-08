@@ -5,7 +5,11 @@ class User < ApplicationRecord
   has_many :flats_as_landlord, foreign_key: :landlord_id, class_name: 'Flat'
   has_many :viewings_as_tenant, foreign_key: :tenant_id, class_name: 'Viewing'
   has_many :viewings_as_landlord, foreign_key: :landlord_id, class_name: 'Viewing'
+
   has_many :tenancies_as_tenant, foreign_key: :tenant_id, class_name: 'Tenancy'
+
+  has_many :orders
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: %i[facebook]

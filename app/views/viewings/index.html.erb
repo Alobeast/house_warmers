@@ -1,4 +1,4 @@
-<h1>Salut les PEDES</h1>
+<h1>Salut ca va? Here's an index of your viewings!</h1>
 
   <ul>
     <% @viewings.each do |viewing| %>
@@ -6,6 +6,19 @@
       <p>Message for: <%= viewing.landlord.first_name %></p>
       <p>Your message: <%= viewing.message %></p>
       <p>address: <%= viewing.flat.address %> </p>
+      <p>status: <%= viewing.flat.letting_status %> </p>
+      <% if viewing.flat.letting_status == "confirmed" %>
+        <div>
+          <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'flat_id', viewing.flat.id %>
+            <%= submit_tag 'Deposit', class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      <% end %>
     </li>
     <% end %>
   </ul>
+
+
+
+

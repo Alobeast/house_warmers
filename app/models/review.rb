@@ -3,12 +3,12 @@ class Review < ApplicationRecord
   belongs_to :tenant, class_name: 'User', optional:
 
   RATINGS = 1..5
-  validates :area_rating, inclusion: {in: RATINGS}
-  validates :noise_rating, inclusion: {in: RATINGS}
-  validates :condition_rating, inclusion: {in: RATINGS}
-  validates :energy_rating, inclusion: {in: RATINGS}
-  validates :landlord_rating, inclusion: {in: RATINGS}
-  validates :plumbing_rating, inclusion: {in: RATINGS}
+  # validates :area_rating, inclusion: {in: RATINGS}
+  # validates :noise_rating, inclusion: {in: RATINGS}
+  # validates :condition_rating, inclusion: {in: RATINGS}
+  # validates :energy_rating, inclusion: {in: RATINGS}
+  # validates :landlord_rating, inclusion: {in: RATINGS}
+  # validates :plumbing_rating, inclusion: {in: RATINGS}
 
   mount_uploader :proof_pic, PhotoUploader
 
