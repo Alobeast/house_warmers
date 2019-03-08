@@ -1,4 +1,4 @@
-<!-- <h1>See all flats here</h1>
+ <h1>See all flats here</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
 
 
@@ -25,30 +25,6 @@
   <%= submit_tag "Search"%>
   <%= link_to "Remove filter", flats_path%>
 <% end %>
-
-
-<ul>
- <% @flats.each do |flat| %>
-  <li>
-
-  Address is <%= flat.address %>
-  Number of bedrooms: <%= flat.bedrooms %>
-  Price: <%= flat.rental_price %>
-  Size: <%= flat.size %>
-  <% flat.reviews.each do |review| %>
-  <%= review.rating %>
-  <% end %>
-  <%= link_to "details", flat_path(flat.id) %>
-
-  <% if @flats.empty? %>
-  <h2> No flats available </h2>
-  <% end %>
-
-  </li>
-<% end %>
-
-
--->
 
 <!-- <section class="search-sec">
     <div class="container">
@@ -108,9 +84,9 @@
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
       <p class="read-more">
         <a href="#">Read More</a>
-        <a href="#"><% flat.reviews.each do |review| %>
-  <%= review.rating %>
-  <% end %></a>
+        <a href="#">
+          <%= flat.average_rating == 0 ? "" : flat.average_rating %>
+        </a>
       </p>
     </div>
   </div>
