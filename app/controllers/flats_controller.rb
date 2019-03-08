@@ -31,6 +31,17 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @viewing = Viewing.new(flat: @flat)
+    @tenancies = current_user.friend_tenancies_near(@flat)
+    @lived_in = @tenancies[:lived_in].map do |tenancy|
+      id = tenancy.user_id
+      name = User.find(id)
+    end
+
+    @lived_close = @tenancies[:lived_close].map do |tenancy|
+      id = tenancy.user_id
+      name = User.find(id)
+    end
+
     @markers = [
       {
         lng: @flat.longitude,
@@ -43,4 +54,5 @@ class FlatsController < ApplicationController
   def flat_params
     params.require(:flat).permit(:address)
   end
+
 end

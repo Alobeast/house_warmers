@@ -42,7 +42,7 @@ david = User.create!(first_name:'David', last_name:'Santos', email:'david@gmail.
 frederik = User.create!(first_name:'Frederik', last_name:'Blanc', email:'frederik@gmail.com', password:'111111')
 mitch = User.create!(first_name:'Mitch', last_name:'Thomas', email:'mitch@gmail.com', password:'111111')
 michelle = User.create!(first_name:'Michelle', last_name:'Stott', email:'michelle@gmail.com', password:'111111')
-
+alois = User.create!(email: "alois.beard@laposte.net", username: nil, first_name: 'Alois', last_name: 'Beard', password:'111111', profile_pic: nil, provider: "facebook", uid: "10157089276935030", friends: [{"id"=>"10155944089180927", "name"=>"Catherine Spyropoulos"}])
 # Flats
 flat1 = Flat.create!(address:'Korte Bergstraat 2B, Amersfoort', bedrooms:1, size:42, build_year:1985, deposit_amount:1000, description:
   'Charming 1 bedroom apartment with a large bedroom and plenty of storage space.
@@ -172,5 +172,9 @@ review9 = Review.create!(rating:3, comment:'Huge damp problem in the flat.', fla
 review10 = Review.create!(rating:5, comment:'Perfect flat in the perfect location. Had absolutely no problem with this flat in all 3 years I lived there.', flat:flat8, tenant:tristin)
 review11 = Review.create!(rating:5, comment:"Amazing flat and great landlord! Can't ask for a better location.", flat:flat1, tenant:romy)
 review12 = Review.create!(rating:2, comment:'Although this is a great looking flat, there is a huge heating problem. The water is only hot for small bursts of time so most of the showers I had when living there were cold. I eventually resorted to showering at the office or at the gym to avoid freezing.', flat:flat9, tenant:carmen)
+
+# Tenancies
+
+tenancy1 = Tenancy.create!(flat:flat3, user:alois)
 
 
