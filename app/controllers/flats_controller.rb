@@ -70,7 +70,6 @@ class FlatsController < ApplicationController
       }]
   end
 
-
   private
 
   def create_marker(flats)

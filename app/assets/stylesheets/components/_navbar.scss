@@ -2,7 +2,7 @@
 .navbar-wagon {
 
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #1C3142;
+  background: $dark-blue;
 
   transition: all 0.3s ease;
   height: 60px;
@@ -43,11 +43,11 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #70AABB;
-  font-size: 14px;
+  color: $orange;
+  font-size: 12px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $light_gray;
   text-decoration: none;
 }
 
