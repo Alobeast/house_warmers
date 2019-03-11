@@ -1,18 +1,24 @@
 .notification {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   background: white;
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
-  border-radius: 6px;
-  box-shadow: 1px 1px #bfbfbf;
+  border-radius: 5px;
+  // box-shadow: 1px 1px #bfbfbf;
   opacity: 0.8;
+  box-shadow: 0 9px 7px 2px rgba(#000, .1);
 }
 
 .notification-btn {
   background-color: $blue;
   opacity: 0.8;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    font-size: 13px;
 }
 
 .notification-btn:hover {
@@ -33,11 +39,15 @@
 .notification p {
   margin: 0;
   line-height: 1.4;
+  color: $dark-blue;
+  font-size: 15px;
+  font-weight: light;
 }
 
 .notification small {
-  color: #999999;
-  font-weight: bold;
+  color: $orange;
+  font-weight: light;
+  font-size: 15px;
 }
 .notification .notification-actions {
   opacity: 0;
@@ -61,6 +71,6 @@
 
 .notification-container .notification h2 {
   color: $dark-blue;
-  font-weight: bold;
+  font-size: 20px;
   margin: 0;
 }

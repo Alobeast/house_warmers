@@ -9,7 +9,7 @@
       <%= cl_image_tag viewing.flat.photo1, width: 120, height: 90%>
 
       <div class="notification-content">
-        <h2>Address: <%= viewing.flat.address %> </h2>
+        <h2><%= viewing.flat.address %> </h2>
         <p><small>Message for <%= viewing.landlord.first_name %>:</small></p>
         <p>"<%= viewing.message %>"</p>
       </div>
