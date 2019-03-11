@@ -1,6 +1,7 @@
-<h1>Order</h1>
-<ul>
-  <li>Status: <%= @order.state %></li>
-  <li>appart <%= @order.flat.address %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-<ul>
+<div class="container">
+  <div class="payment-box col-xs-12 col-sm-8 col-sm-offset-2">
+    <h1>Thank you!</h1>
+    <p>Your <%= humanized_money_with_symbol(@order.amount) %> deposit is now secured</p>
+    <p><%= @order.flat.landlord.first_name %> will shortly send your rental agreement for signature.</p>
+  </div>
+</div>
