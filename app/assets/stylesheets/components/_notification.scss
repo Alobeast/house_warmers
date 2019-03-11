@@ -14,12 +14,9 @@
 .notification-btn {
   background-color: $blue;
   opacity: 0.8;
+  font-size: 13px;
 }
 
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-    font-size: 13px;
-}
 
 .notification-btn:hover {
   background-color: $blue;
