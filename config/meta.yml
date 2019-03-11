@@ -1,0 +1,5 @@
+meta_product_name: "Nested"
+meta_title: "Nested - Rent in Peace" #Product name - product tagline
+meta_description: "Bring Transparency to the rental market"
+meta_image: "Amsterdam3.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
