@@ -12,7 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       if @user.save
         sign_in_and_redirect
       else
-        raise
+        raise @user.errors.full_messages.inspect
       end
     end
   end
