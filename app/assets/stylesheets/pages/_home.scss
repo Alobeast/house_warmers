@@ -1,23 +1,23 @@
+$secondary: #d5deef;
+$secondary-dark: #b8bdc9;
+$secondary-darker: #838ea0;
 
-body {
-  margin: 0;
-  padding: 0px;
-  // background-color: #eeeeee;
-}
 
-// #menu {
-//   float: right;
+// body {
+//   margin: 0;
+//   padding: 0px;
 // }
+
 .home-banner{
+  display: flex;
   background-image: asset-url('Amsterdam2.png');
-  // background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2017/11/My-most-popular-pic-since-I-started-dog-photography-5a0b38cbd5e1e__880.jpg);
   // background-attachment: fixed;
   background-attachment: relative;
-  position: relative; top: 0; overflow:scroll;
-  background-repeat: 0;
-  background-size: 100% auto;
-  width: 100%;
-  height: 800px;
+  // position: relative; top: 0; overflow:scroll;
+  background-repeat: no-repeat;
+  background-size: 103%;
+  width: 100% ;
+  height: 800px ;
   z-index: 0;
   top: 0;
   display: none;
@@ -44,55 +44,87 @@ body {
 }
 
 .biglogo {
+  color:white;
   position: absolute;
   width: 100%;
   text-align: center;
   z-index: 99;
-  top: 50%;
+  top: 93%;
 }
-.no{
+a{
+
+  &:hover {
+    text-decoration: none;
+    color: $secondary;
+    & svg {
+      -webkit-filter: drop-shadow(10px $secondary-dark);
+      filter: drop-shadow(10px $secondary-dark);
+    }
+  }
+}
+
+.absolute {
   position: absolute;
-height: 40px;
-width: 161px;
-border-radius: 7px;
-  color: gray;
-top:65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-  margin-top: -13px;
-  margin-left: 1134px;
-
+  top: 196px;
+  right: 0;
+  width: 375px;
+  height: 500px;
 }
 
-.row {
-  display: flex; /* equal height of the children */
+.homep{
+  color:white;
 }
-
-.col {
-  flex: 1; /* additionally, equal width */
-  text-align: center;
-  padding: 70px 30px;
-}
-
-.button {
+.button.home {
   background-color: transparent;
   border: 1px #222222 solid;
   color: #222222;
-  padding: 15px 32px;
+  padding: 10px ;
   text-align: center;font-family: 'Playfair Display SC', serif;
   font-weight: 700;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
 }
-.button:hover {
-  text-decoration: none;
-  font-size: 20px;
+.button.home:hover {
+  a{
+
+    text-decoration: none;
+  }
+  font-size: 16px;
 }
 
 
+.button1.home {
+  background-color: transparent;
+  border: 1px #222222 solid;
+  color: #222222;
+  padding: 10px;
+  text-align: center;font-family: 'Playfair Display SC', serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px ;
+  cursor: pointer;
+}
+.button1.home:hover {
+  a{
 
 
+    text-decoration: none;
+  }
+  font-size: 16px;
+}
 
+.2buttons{
+  position:relative;
+  bottom: 0px;
+}

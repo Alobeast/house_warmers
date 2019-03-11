@@ -11,14 +11,16 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 /* Logo */
 .navbar-wagon-brand img {
   height: 105px;
+  border-radius: 20px;
+
 }
 
 /* User Avatar */

@@ -6,10 +6,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 
 
-// var preloadedScript = document.createElement("script");
-// preloadedScript.src = "application.js";
-// document.body.appendChild(preloadedScript);
-
 const node = document.querySelector(".home-banner");
 
 if(node) {
@@ -24,4 +20,14 @@ if(node) {
   }
 
   setInterval(nextImage, 600)
+}
+
+
+if (document.querySelector('.flats.index')) {
+  window.hilightMarker = (id) => {
+    document.querySelector('.marker-' + id).classList.add('active')
+  }
+  window.unhilightMarker = (id) => {
+    document.querySelector('.marker-' + id).classList.remove('active')
+  }
 }

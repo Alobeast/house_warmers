@@ -77,7 +77,8 @@ class FlatsController < ApplicationController
     flats.map do |flat|
       {
         lng: flat.longitude,
-        lat: flat.latitude
+        lat: flat.latitude,
+        id: flat.id
       }
     end
   end

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="payment-box col-xs-12 col-sm-8 col-sm-offset-2">
       <h4>Great! You'll soon be the tenant of: <br>
@@ -19,6 +20,7 @@
       data-email="<%= current_user.email %>"
       data-description="Description de l'appartement"
       data-amount="<%= @order.amount_cents %>"
+
 
       data-currency="<%= @order.amount.currency %>"></script>
 
