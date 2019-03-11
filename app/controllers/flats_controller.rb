@@ -1,6 +1,7 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    flats = Flat.where.not(latitude: nil, longitude: nil)
+    @flats = flats.where(available: true)
     @markers = create_marker(@flats)
 
     @rental_price = params[:rental_price]
