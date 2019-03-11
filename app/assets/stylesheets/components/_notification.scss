@@ -12,6 +12,12 @@
 
 .notification-btn {
   background-color: $blue;
+  opacity: 0.8;
+}
+
+.notification-btn:hover {
+  background-color: $blue;
+  opacity: 1;
 }
 
 .notification:hover {
