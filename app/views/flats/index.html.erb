@@ -127,16 +127,15 @@
         </div>
         <div class="description">
           <h1 ><%= flat.address %></h1>
-          <h2>Opening a door to the future</h2>
+
           <p> <%= flat.description %></p>
           <p class="read-more">
 
-            <a href="#">Details</a>
-                      </p>
-            <a href="#"><% flat.reviews.each do |review| %>
+            <%= link_to "Details", flat_path(flat.id)  %>
 
-            <% end %></a>
-<%= flat.average_rating == 0 ? "" : flat.average_rating %>
+          </p>
+
+          <%= flat.average_rating == 0 ? "" : flat.average_rating %>
 
         </div>
       </div>
