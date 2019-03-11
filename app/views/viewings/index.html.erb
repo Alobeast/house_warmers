@@ -1,24 +1,61 @@
-<h1>Salut ca va? Here's an index of your viewings!</h1>
+<div class="container">
+  <h1 style="text-align:center; font-size:40px;">Your Viewings!</h1>
 
-  <ul>
+
+
+  <div class="notification-container">
     <% @viewings.each do |viewing| %>
-    <li>
-      <p>Message for: <%= viewing.landlord.first_name %></p>
-      <p>Your message: <%= viewing.message %></p>
-      <p>address: <%= viewing.flat.address %> </p>
-      <p>status: <%= viewing.flat.letting_status %> </p>
+    <div class="notification">
+      <%= cl_image_tag viewing.flat.photo1, width: 120, height: 90%>
+
+      <div class="notification-content">
+        <h2>Address: <%= viewing.flat.address %> </h2>
+        <p><small>Message for <%= viewing.landlord.first_name %>:</small></p>
+        <p>"<%= viewing.message %>"</p>
+      </div>
       <% if viewing.flat.letting_status == "confirmed" %>
-        <div>
-          <%= form_tag orders_path do %>
-            <%= hidden_field_tag 'flat_id', viewing.flat.id %>
-            <%= submit_tag 'Deposit', class: 'btn btn-primary' %>
-          <% end %>
-        </div>
+
+
+            <div>
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'flat_id', viewing.flat.id %>
+              <%= submit_tag 'Renting request accepted!', class: 'btn btn-primary notification-btn' %>
+              <% end %>
+            </div>
+
       <% end %>
-    </li>
+    </div>
     <% end %>
-  </ul>
+
+  </div>
 
 
 
+
+  <!-- <div class="notification">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>14th January</small></p>
+      <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="notification">
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+    <div class="notification-content">
+      <p><small>9th January</small></p>
+      <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div> -->
+</div>
 
