@@ -1,32 +1,35 @@
+<div class="container container-deposit">
+  <div class="card-deposit">
+    <%= cl_image_tag @order.flat.photo3%>
+    <div class="card-deposit-infos">
+      <div>
+        <h4>Great! You'll soon be the tenant of: <br>
+          <%= @order.flat.address %></h4>
+          <p>We are securing your deposit.</p>
+          <p>The landlord has <strong>7 days</strong> to send the rental agreement.</p>
+          <p>Else, the deposit is cancelled and your money stays on your account.</p>
 
-<div class="container">
-  <div class="payment-box col-xs-12 col-sm-8 col-sm-offset-2">
-      <h4>Great! You'll soon be the tenant of: <br>
-      <%= @order.flat.address %>!</h4>
-      <p>We are securing your deposit!</p>
-      <p>The landlord has <strong>7 days</strong> to send the rental agreement.</p>
-      <p>Else, the deposit is cancelled and your money stays on your account.</p>
+          <%= form_tag order_payments_path(@order) do %>
+          <article>
+            <label class="amount">
+              <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+            </label>
+          </article>
 
-      <%= form_tag order_payments_path(@order) do %>
-      <article>
-        <label class="amount">
-          <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
-        </label>
-      </article>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button notification-btn"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button notification-btn"
-      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-name="Deposit"
 
-      data-name="Deposit"
-
-      data-email="<%= current_user.email %>"
-      data-description="<%= @order.flat.address %>"
-      data-amount="<%= @order.amount_cents %>"
+          data-email="<%= current_user.email %>"
+          data-description="<%= @order.flat.address %>"
+          data-amount="<%= @order.amount_cents %>"
 
 
-      data-currency="<%= @order.amount.currency %>"></script>
+          data-currency="<%= @order.amount.currency %>"></script>
 
-      <% end %>
-
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>

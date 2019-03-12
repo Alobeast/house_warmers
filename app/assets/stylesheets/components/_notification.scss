@@ -14,7 +14,7 @@
 .notification-btn {
   background-color: $blue;
   opacity: 0.8;
-      font-size: 13px;
+  font-size: 13px;
 
 }
 
@@ -22,10 +22,12 @@
 .notification-btn:hover {
   background-color: $blue;
   opacity: 1;
+  transition: all 0.2s ease-in;
 }
 
 .notification:hover {
   opacity: 1;
+  transition: all 0.2s ease-in;
 }
 
 .notification .notification-content {
