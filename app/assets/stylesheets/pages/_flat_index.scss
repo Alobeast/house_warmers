@@ -27,8 +27,6 @@ div.card.container {
     padding-right: 1px;
     margin-right: 20px;
   }
-    &:before {
-      appearance: "♥";
     }
   select {
     padding-left: 100px;
@@ -91,17 +89,18 @@ div.card.container {
 }
 
 .blog-card {
-    display: flex;
-    flex-direction: column;
-    margin: 3.78rem auto;
-    box-shadow: 0 5px 5px 2px rgba(#000, .1);
-    margin-bottom: 1.6%;
-    background: $color_white;
-    line-height: 1.4;
-    font-family: sans-serif;
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 3.78rem auto;
+  box-shadow: 0 5px 5px 2px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: $color_white;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+
     a {
       color: inherit;
       &:hover {
@@ -224,7 +223,6 @@ div.card.container {
           background: #f2ad00;
           width: 100%;
           top: -0.75rem;
-          border-radius: 3px;
         }
       }
     }
