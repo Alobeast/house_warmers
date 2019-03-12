@@ -43,16 +43,16 @@
 
       <% @flats.each_with_index do |flat, index| %>
 
-      <div class="blog-card" id= "<%=index %>">
+      <div class="blog-card" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)">
         <div class="meta">
           <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
           <ul class="details">
 
-            <li class="fas fa-euro-sign">:<%= flat.rental_price %></li>
+            <li class="fas fa-euro-sign"><%= flat.rental_price %></li>
             <br>
-            <li class="fas fa-bed">:<%= flat.bedrooms %></li>
+            <li class="fas fa-bed"><%= flat.bedrooms %></li>
             <br>
-            <li class="fas fa-expand-arrows-alt">:<%= flat.size %>m²</li>
+            <li class="fas fa-expand-arrows-alt"><%= flat.size %>m²</li>
           </ul>
         </div>
         <div class="description">
@@ -75,21 +75,7 @@
 
     <div
     id="map"
-
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-
-
-<!-- <div class="footer1">
-  <div id="button1"></div>
-<div id="container1">
-<div id="cont">
-<div class="footer_center">
-     <h3>Classy footer text</h3>
-</div>
-</div>
-</div>
-
-</div> -->

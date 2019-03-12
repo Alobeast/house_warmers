@@ -1,0 +1,155 @@
+.review-form {
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 7px 2px rgba(#000, .1);
+}
+
+form {
+  .rating {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  font-size: 20px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #09f;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+}
+}
+
+.criteria {
+  margin-bottom: 5px;
+}
+
+.user-review {
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+
+.review-form-content {
+  padding: 20px;
+}
+
+.review-form-content {
+  font-size: 18px;
+  font-weight: lighter;
+
+}
+
+.form-header {
+  height: 100px;
+  h1 {
+  padding-top: 40px;
+  text-align: center;
+  color: $purple;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+  }
+}
+
+.form-control-label.string.optional {
+  font-weight: lighter;
+}
+
+.file.optional {
+  font-weight: lighter;
+}
+
+.form-control.string.optional {
+  // border-width: 0px 0px 1px 0px;
+}
+
+.input {
+  border-top: 0px;
+}
+
+.stars {
+  margin-left: 0px;
+  // text-align: center;
+  margin-bottom: 25px;
+  p {
+    font-size: 16px;
+  }
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.btn-orange {
+  color: white;
+  background-color: $purple;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.btn-orange:hover {
+  opacity: 0.8;
+}
+
+.footer {
+  height: 100px;
+  background-color: $blue;
+}
+

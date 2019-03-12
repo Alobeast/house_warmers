@@ -1,44 +1,67 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div>
-        <h1>Write a review</h1>
-        <%= simple_form_for @review do |f| %>
+      <div class="review-form">
 
-        <%= f.input :address %>
-
-        <%= f.input :proof_pic %>
-        <%= f.input :proof_pic_cache, as: :hidden %>
-
-        <div class="row">
-          <div class="col-xs-4">
-            <%= f.input :area_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
-          </div>
-          <div class="col-xs-4">
-            <%= f.input :noise_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
-          </div>
-          <div class="col-xs-4">
-            <%= f.input :condition_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
-          </div>
+        <div class="form-header">
+          <h1>Leave a review</h1>
         </div>
-        <div class="row">
-          <div class="col-xs-4">
-            <%= f.input :energy_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+        <div class="review-form-content">
+          <%= simple_form_for @review do |f| %>
+          <div class="question">
+          <%= f.input :address%>
           </div>
-          <div class="col-xs-4">
-            <%= f.input :landlord_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
+          <div class="question">
+          <%= f.input :proof_pic, label: "Please upload proof of address" %>
+          <%= f.input :proof_pic_cache, as: :hidden %>
           </div>
-          <div class="col-xs-4">
-            <%= f.input :plumbing_rating, collection: Review::RATINGS, prompt: "What's your rating?" %>
-          </div>
-        </div>
-          <%= f.input :comment, placeholder: "What did you think of this flat?" %>
+          <div class="question">
+          <p>Rate the following based on a scale of 1 to 5, 1 being completey dissatisfied, and 5 being completely satisfied:</p>
 
-        <%= f.submit "add a review", class: "btn btn-primary"%>
-        <% end %>
+          <div class="row stars">
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> Area </p>
+              <% @name =  "review[area_rating]"%>
+              <%= render "shared/reviews"%>
+            </div>
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> Noise level </p>
+              <% @name = "review[noise_rating]" %>
+              <%= render "shared/reviews"%>
+            </div>
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> General condition </p>
+              <% @name = "review[condition_rating]" %>
+              <%= render "shared/reviews"%>
+            </div>
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> Energy efficiency </p>
+              <% @name = "review[energy_rating]" %>
+              <%= render "shared/reviews"%>
+            </div>
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> Landlord </p>
+              <% @name = "review[landlord_rating]" %>
+              <%= render "shared/reviews"%>
+            </div>
+            <div class="col-xs-6 user-review">
+              <p class="criteria"> Water (plumbing) </p>
+              <% @name = "review[plumbing_rating]" %>
+              <%= render "shared/reviews"%>
+            </div>
+          </div>
+          </div>
+          <div class="question">
+
+          <%= f.input :comment, placeholder: "Please provide further details" %>
+          </div>
+          <%= f.submit "Leave review", class: "btn-orange"%>
+          <% end %>
+        </div>
+
+        <div class="footer">
+        </div>
       </div>
     </div>
   </div>
