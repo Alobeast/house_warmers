@@ -3,7 +3,7 @@
 
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: $dark-blue;
-
+  opacity: 1;
   transition: all 0.3s ease;
   height: 60px;
   padding: 0px 30px;
@@ -18,8 +18,7 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 105px;
-  border-radius: 20px;
+  height: 35px;
 
 }
 
@@ -46,7 +45,7 @@
 /* Navbar link */
 .navbar-wagon-link {
   color: $orange;
-  font-size: 12px;
+  font-size: 14px;
 }
 .navbar-wagon-link:hover {
   color: $light_gray;
@@ -83,3 +82,8 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.burger {
+  color: $orange;
+}
+

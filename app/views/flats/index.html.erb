@@ -1,3 +1,4 @@
+
   <div class="content">
     <div class="card container">
       <h1>Start your search here</h1>
@@ -7,6 +8,7 @@
 
           <div class="search-bar-location">
             <% select_tag "location"%>
+
             <%= text_field_tag :location, params[:location], placeholder: 'City'%>
             <% radius = [1, 5, 10, 20, 50] %>
             <%= select_tag "radius", options_for_select(radius, @radius)%>
@@ -57,15 +59,12 @@
         </div>
         <div class="description">
           <h1 ><%= flat.address %></h1>
-
           <p> <%= flat.description %></p>
+
           <p class="read-more">
-
-            <%= link_to "Details", flat_path(flat.id)  %>
-
-          </p>
-
           <%= flat.average_rating == 0 ? "" : flat.average_rating %>
+            <%= link_to "Details", flat_path(flat.id)  %>
+          </p>
 
         </div>
       </div>

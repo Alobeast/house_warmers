@@ -105,6 +105,10 @@ form {
   }
 }
 
+.form-control-file.file.optional {
+  font-size: 14px;
+}
+
 .form-control-label.string.optional {
   font-weight: lighter;
 }
@@ -148,8 +152,11 @@ form {
   opacity: 0.8;
 }
 
-.footer {
-  height: 100px;
+.form-footer {
+  height: 40px;
   background-color: $blue;
+  margin-bottom: 40px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
