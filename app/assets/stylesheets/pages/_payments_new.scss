@@ -1,11 +1,19 @@
+.payment-container {
+  display: flex;
+  justify-content: center;
+}
+
 .payment-box {
-  background-color: white;
+
+  background-color: #1C6E8C;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   border-radius: 6px;
   box-shadow: 0 9px 7px 2px rgba(#000, .1);
-  color: $dark-blue;
+  color: white;
   font-weight: lighter;
+  height: 460px;
+  width: 350px;
 }
 
 .payment-box .stripe-button-el {
@@ -13,3 +21,12 @@
   background-color: $dark-blue;
 }
 
+.payment-confirm {
+  margin-top: 80px;
+  font-size: 100px;
+}
+
+.payment-content {
+  margin-right: 20px;
+  margin-left: 20px;
+}
