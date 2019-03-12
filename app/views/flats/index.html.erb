@@ -1,16 +1,12 @@
 
-  <div class="content">
-    <div class="card container">
-      <h1>Start your search here</h1>
       <div class="search-bar">
 
           <%= form_tag flats_path, method: :get do %>
 
           <div class="search-bar-location">
             <% select_tag "location"%>
-
-            <%= text_field_tag :location, params[:location], placeholder: 'City'%>
-            <% radius = [1, 5, 10, 20, 50] %>
+            <%= text_field_tag :location, params[:location], placeholder: 'Search for city, postcode, adress, etc.'%>
+            <% radius = ["", 1, 5, 10, 20, 50] %>
             <%= select_tag "radius", options_for_select(radius, @radius)%>
           </div>
 
@@ -42,6 +38,8 @@
           <% end %>
 
       </div>
+      <div class="content">
+    <div class="card container">
 
       <% @flats.each_with_index do |flat, index| %>
 
@@ -62,7 +60,7 @@
           <p> <%= flat.description %></p>
 
           <p class="read-more">
-          <%= flat.average_rating == 0 ? "" : flat.average_rating %>
+          <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
             <%= link_to "Details", flat_path(flat.id)  %>
           </p>
 
