@@ -43,7 +43,7 @@
 
       <% @flats.each_with_index do |flat, index| %>
 
-      <div class="blog-card" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)">
+      <div class="blog-card" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)" onclick=document.location="<%= flat_path(flat) %>">
         <div class="meta">
           <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
           <ul class="details">
@@ -61,7 +61,6 @@
 
           <p class="read-more">
           <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
-            <%= link_to "Details", flat_path(flat.id)  %>
           </p>
 
         </div>
