@@ -42,7 +42,7 @@
 
       <% @flats.each_with_index do |flat, index| %>
 
-      <div class="blog-card" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)" onclick=document.location="<%= flat_path(flat) %>">
+      <div class="blog-card pointer" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)" onclick=document.location="<%= flat_path(flat) %>">
         <div class="meta">
           <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
           <ul class="details">
