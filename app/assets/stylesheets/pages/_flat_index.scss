@@ -81,7 +81,7 @@ div.card.container {
   }
 }
 
-
+.pointer {cursor: pointer;}
 
 .content {
   display: flex;
@@ -90,7 +90,13 @@ div.card.container {
   background-attachment: relative;
 }
 
+.blog-card:hover {
+  opacity: 1;
+  transition: all 0.2s ease-in;
+}
+
 .blog-card {
+    opacity: 0.8;
     display: flex;
     flex-direction: column;
     margin: 3.78rem auto;
