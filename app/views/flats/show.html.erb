@@ -63,12 +63,12 @@
       <div class="row col-md-4 reviews-box">
         <!-- FB FRIENDS -->
         <i class="fab fa-facebook-f"></i>
-        <div>
+        <div class="review-box">
           <% if @lived_in.empty? %>
           <p> None of your friends have lived in this apartment </p>
           <% else %>
           <% @lived_in.each do |friend| %>
-          <%= friend.first_name %> <p> has lived in this flat</p>
+          <p><%= friend.first_name %> has lived in this apartment!</p>
           <% end %>
           <% end %>
 
@@ -77,12 +77,12 @@
           <p> None of your friends have lived close by to this apartment </p>
           <% else %>
           <% @lived_close.each do |friend| %>
-          <%= friend.first_name %> <p> has lived close by!</p>
+          <p><%= friend.first_name %> has lived close by!</p>
           <% end %>
           <% end %>
         </div>
-        <div>
 
+        <div>
           <!-- REVIEWS -->
           <div class="review-box">
             <p>Reviews</p>
@@ -100,6 +100,7 @@
             <% end %>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -118,6 +119,7 @@
     margin-top: 40px;
     padding-left: 10px"
     data-markers="<%= @markers.to_json %>"
+
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     ></div>
 
