@@ -1,0 +1,62 @@
+
+
+.search-bar {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-align: center;
+  position: relative;
+  background: #F4F4F4;
+  width:66vw;
+}
+
+.search-bar-location {
+  width: 100%;
+  display: flex;
+  padding-bottom: 1.5rem;
+  input {
+    flex: 1;
+  }
+
+  select {
+    background-color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+  }
+}
+
+.search-bar-budget-size-bedrooms {
+  width: 100%;
+  display: flex;
+  padding-bottom: 1.5rem;
+
+  select {
+    flex: 1;
+    background-color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+  }
+}
+
+.search-bar-rating {
+  width: 100%;
+  display: flex;
+  padding-bottom: 1.5rem;
+
+  select {
+    flex: 1;
+    background-color: white;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+  }
+}
