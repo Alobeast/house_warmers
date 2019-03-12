@@ -8,8 +8,9 @@
 
           <div class="search-bar-location">
             <% select_tag "location"%>
-            <a class="searchin"><%= text_field_tag :location, params[:location], placeholder: 'City'%></a>
-            <% radius = ["radius", 1, 5, 10, 20, 50] %>
+
+            <%= text_field_tag :location, params[:location], placeholder: 'City'%>
+            <% radius = [1, 5, 10, 20, 50] %>
             <%= select_tag "radius", options_for_select(radius, @radius)%>
           </div>
 
