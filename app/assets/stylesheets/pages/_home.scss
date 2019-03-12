@@ -2,12 +2,6 @@ $secondary: #d5deef;
 $secondary-dark: #b8bdc9;
 $secondary-darker: #838ea0;
 
-
-// body {
-//   margin: 0;
-//   padding: 0px;
-// }
-
 .home-banner{
   display: flex;
   background-image: asset-url('Amsterdam2.png');
@@ -15,12 +9,14 @@ $secondary-darker: #838ea0;
   background-attachment: relative;
   // position: relative; top: 0; overflow:scroll;
   background-repeat: no-repeat;
-  background-size: 103%;
+  background-size: 85%;
   width: 100% ;
   height: 800px ;
   z-index: 0;
-  top: 0;
+  margin-top: -40px;
+  // top: 0;
   display: none;
+  background-color: $dark-blue;
 
   &.active {
     display: block;
@@ -51,17 +47,7 @@ $secondary-darker: #838ea0;
   z-index: 99;
   top: 93%;
 }
-a{
 
-  &:hover {
-    text-decoration: none;
-    color: $secondary;
-    & svg {
-      -webkit-filter: drop-shadow(10px $secondary-dark);
-      filter: drop-shadow(10px $secondary-dark);
-    }
-  }
-}
 
 .absolute {
   position: absolute;
@@ -79,9 +65,9 @@ a{
   color:white;
 }
 .button.home {
-  background-color: transparent;
+  background-color: white;
   border: 1px #222222 solid;
-  color: #222222;
+  color: white;
   padding: 10px ;
   text-align: center;font-family: 'Playfair Display SC', serif;
   font-weight: 700;
@@ -90,6 +76,7 @@ a{
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  border-radius: 3px;
   cursor: pointer;
 }
 .button.home:hover {
@@ -102,9 +89,9 @@ a{
 
 
 .button1.home {
-  background-color: transparent;
+  background-color: white;
   border: 1px #222222 solid;
-  color: #222222;
+  color: white;
   padding: 10px;
   text-align: center;font-family: 'Playfair Display SC', serif;
   font-weight: 500;
@@ -112,6 +99,7 @@ a{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 3px;
   margin: 4px ;
   cursor: pointer;
 }
