@@ -1,5 +1,17 @@
-<h1>Reviews</h1>
-<p>Please add the address:</p>
+
+<div class="container">
+  <h1>Reviews</h1>
+  <p>Please add the address:</p>
 
 
+  <div>
+    <%= form_tag flats_path, method: :get do %>
 
+    <% select_tag "location" %>
+    <%= text_field_tag :location, params[:location]%>
+
+    <%= submit_tag "Search"%>
+
+    <% end %>
+  </div>
+</div>

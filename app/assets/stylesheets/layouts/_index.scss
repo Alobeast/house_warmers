@@ -20,7 +20,7 @@ $color_grey_dark: #a2a2a2;
       display: flex;
       flex-direction: column;
       margin: 3.78rem auto;
-      box-shadow: 0 9px 7px 2px rgba(#000, .1);
+      box-shadow: 0 5px 5px 2px rgba(#000, .1);
       margin-bottom: 1.6%;
       background: $color_white;
       line-height: 1.4;
@@ -127,19 +127,19 @@ $color_grey_dark: #a2a2a2;
       text-decoration: none;
 
         a {
-          color: $color_prime;
+          color: $purple;
           display: inline-block;
           position: relative;
           text-decoration: none;
-          &:after {
-            font-family: "Font Awesome 5 Free";
-            content: "\f1ea";
-            text-decoration: none;
-            margin-left: -10px;
-            opacity: 0;
-            vertical-align: middle;
-            transition: margin .3s, opacity .3s;
-          }
+          // &:after {
+          //   font-family: "Font Awesome 5 Free";
+          //   content: "\f1ea";
+          //   text-decoration: none;
+          //   margin-left: -10px;
+          //   opacity: 0;
+          //   vertical-align: middle;
+          //   transition: margin .3s, opacity .3s;
+          // }
 
           &:hover:after {
             margin-left: 5px;
