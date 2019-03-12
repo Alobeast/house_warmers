@@ -3,9 +3,13 @@
   text-align: center;
   margin-top: 20px;
   border-radius: 6px;
-  box-shadow: 1px 1px #bfbfbf;
+  box-shadow: 0 9px 7px 2px rgba(#000, .1);
+  color: $dark-blue;
+  font-weight: lighter;
 }
 
-.stripe-button-el {
+.payment-box .stripe-button-el {
   margin-bottom: 10px;
+  background-color: $dark-blue;
 }
+

@@ -8,6 +8,8 @@ class FlatsController < ApplicationController
     @size = params[:size]
     @location = params[:location]
     @rating = params[:rating]
+    @radius = params[:radius]
+    @bedrooms = params[:bedrooms]
 
     if @rental_price.present?
       @flats = @flats.where("rental_price <= ?", @rental_price)
@@ -20,7 +22,12 @@ class FlatsController < ApplicationController
     end
 
     if @location.present?
-      @flats = @flats.near(@location, 5)
+      @flats = @flats.near(@location, @radius)
+      @markers = create_marker(@flats)
+    end
+
+    if @bedrooms.present?
+      @flats = @flats.where("bedrooms = ?", @bedrooms)
       @markers = create_marker(@flats)
     end
 
