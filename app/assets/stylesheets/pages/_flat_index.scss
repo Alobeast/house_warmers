@@ -9,6 +9,8 @@ div.card.container {
   padding-right: 70px;
   text-align: center;
   position: relative;
+}
+.searchin{
   background: #D9EAF7;
 }
 
@@ -16,6 +18,7 @@ div.card.container {
 .search-bar-location {
   width: 100%;
   display: flex;
+
   padding-bottom: 20px;
 
   input {
@@ -26,6 +29,7 @@ div.card.container {
     padding-left: 16px;
     padding-right: 1px;
     margin-right: 20px;
+
   }
 
   select {
@@ -37,12 +41,13 @@ div.card.container {
     -moz-appearance: none;
     appearance: none;       /* remove default arrow */
     position: relative;
+
   }
 }
 
 .search-bar-budget-size-bedrooms {
   width: 100%;
-  display: flex;
+  display: flex;display: inline-block;
   padding-bottom: 1.5rem;
 
   select {
@@ -61,13 +66,13 @@ div.card.container {
 .search-bar-rating {
   width: 100%;
   display: flex;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;display: inline-block;
 
   select {
     flex: 1;
     background-color: white;
     border-radius: 0px;
-    border-width: 1px;
+    border-width: 1px;display: inline-block;
     border-style: solid;
     border-color: rgb(166, 166, 166);
     border-image: initial;
