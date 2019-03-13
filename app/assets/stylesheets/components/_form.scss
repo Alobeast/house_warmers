@@ -1,7 +1,7 @@
 .review-form {
   margin-top: 40px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 0 6px 7px 2px rgba(#000, .1);
 }
 
@@ -98,7 +98,7 @@ form {
   h1 {
   padding-top: 40px;
   text-align: center;
-  color: $purple;
+  color: #C5D86D;
   font-weight: bold;
   font-size: 30px;
   font-family: "Open Sans", "Helvetica", "sans-serif";
@@ -138,25 +138,16 @@ form {
   margin-bottom: 25px;
 }
 
-.btn-orange {
-  color: white;
-  background-color: $purple;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.btn-orange:hover {
-  opacity: 0.8;
-}
 
 .form-footer {
   height: 40px;
   background-color: $blue;
   margin-bottom: 40px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
+// SHOW PAGE - MESSAGE BOX
+.form-control-label.text.optional {
+  font-weight: lighter;
+}

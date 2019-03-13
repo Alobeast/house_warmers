@@ -33,6 +33,14 @@ class Flat < ApplicationRecord
     average / 10.0
   end
 
+  def flat_average(flat)
+    final_rating = (flat.area_rating + flat.condition_rating + flat.noise_rating
+      + flat.plumbing_rating + flat.energy_rating + flat.landlord_rating) / 6
+    flat.rating = final_rating
+    return flat.rating
+  end
+
+
 # include PgSearch
 #   pg_search_scope :search_by_rental_price_and_size_and_rating,
 #   against: [:rental_price, :size, :average_rating],

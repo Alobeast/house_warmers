@@ -1,0 +1,67 @@
+.scroll-side {
+  margin-top: 40px;
+}
+
+
+.description {
+  margin-top: 15px;
+  // padding-left: 10px;
+  font-size: 16px;
+}
+
+.reviews-box {
+  position: sticky;
+  top: 60px;
+  height: 100vh;
+}
+
+.review-list {
+  padding-top: 15px;
+  font-size: 16px;
+}
+
+.message-box {
+  // width: 350px;
+  margin-top: 35px;
+}
+
+.review-count {
+  font-size: 14px;
+}
+
+.form-control.text.optional {
+  height: 120px;
+}
+.additional-info {
+  margin-top: 50px;
+}
+
+.space {
+  height: 30px;
+}
+
+.star-ratings-css {
+  margin: 0px;
+}
+
+.stars-show {
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+
+.criteria-show {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.map-info {
+background-color: $light-gray;
+box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+width: 100%;
+padding: 10px;
+font-size: 14px;
+p {
+  margin-bottom: 5px;
+}
+}

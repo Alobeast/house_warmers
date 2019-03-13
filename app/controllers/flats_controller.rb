@@ -11,6 +11,7 @@ class FlatsController < ApplicationController
     @radius = params[:radius]
     @bedrooms = params[:bedrooms]
 
+
     if @rental_price.present?
       @flats = @flats.where("rental_price <= ?", @rental_price)
       @markers = create_marker(@flats)
@@ -66,6 +67,30 @@ class FlatsController < ApplicationController
       name = User.find(id)
     end
 
+    # RATING AVERAGES
+    ratings = ratings_array(@flat, :rating)
+    @average = average(ratings)
+
+    area_ratings = ratings_array(@flat, :area_rating)
+    @area_average = average(area_ratings)
+
+    landlord_ratings = ratings_array(@flat, :landlord_rating)
+    @landlord_average = average(landlord_ratings)
+
+    noise_ratings = ratings_array(@flat, :noise_rating)
+    @noise_average = average(noise_ratings)
+
+    plumbing_ratings = ratings_array(@flat, :plumbing_rating)
+    @plumbing_average = average(plumbing_ratings)
+
+    condition_ratings = ratings_array(@flat, :condition_rating)
+    @condition_average = average(condition_ratings)
+
+    energy_ratings = ratings_array(@flat, :energy_rating)
+    @energy_average = average(energy_ratings)
+
+
+    # MAPS
     @lived_close = @tenancies[:lived_close].map do |tenancy|
       id = tenancy.user_id
       name = User.find(id)
@@ -76,22 +101,51 @@ class FlatsController < ApplicationController
         lng: @flat.longitude,
         lat: @flat.latitude
       }]
-  end
 
-  private
-
-  def create_marker(flats)
-    flats.map do |flat|
-      {
-        lng: flat.longitude,
-        lat: flat.latitude,
-        id: flat.id
+      @friend_markers_close = @tenancies[:lived_close].map do |t| {
+        lng: Flat.find(t.flat_id).longitude,
+        lat: Flat.find(t.flat_id).latitude,
+        id: t.id
       }
     end
-  end
 
-  def flat_params
-    params.require(:flat).permit(:address)
+    @friend_markers_in = @tenancies[:lived_in].map do |t| {
+      lng: Flat.find(t.flat_id).longitude,
+      lat: Flat.find(t.flat_id).latitude,
+      id: t.id
+    }
   end
+end
 
+private
+
+def create_marker(flats)
+  flats.map do |flat|
+    {
+      lng: flat.longitude,
+      lat: flat.latitude,
+      id: flat.id
+    }
+  end
+end
+
+def ratings_array(flat, rating_column)
+  flat.reviews.map do |r|
+    r.send rating_column
+  end
+end
+
+def average(ratings)
+  if ratings.count == 0
+    average = 0
+  else
+    average = ratings.sum / ratings.count
+  end
+  return average
+end
+
+
+def flat_params
+  params.require(:flat).permit(:address)
+end
 end

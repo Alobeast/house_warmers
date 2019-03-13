@@ -1,134 +1,186 @@
-<div class="content1">
-  <div class="container">
 
-    <h2><%= @flat.bedrooms %> bedroom flat to rent</h2>
+<div class="container">
+  <!-- CAROUSEL -->
+  <div class="row carousel-box">
+    <div class="col-md-8 scroll-side">
+      <div class="show_photos">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-    <div>
-      <%= @flat.bedrooms %> <i class="fas fa-bed"></i>
-      <%= @flat.bathrooms %> <i class="fas fa-bath"></i>
-      <%= @flat.size %>m²
-    </div>
+          <div class="carousel-inner" role="listbox">
 
-    <!-- CAROUSEL -->
-    <div class="container">
-      <div class="row col-md-8">
-        <div class="show_photos">
-          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner" role="listbox">
-
-              <div class="item active" style="background-image: url('<%= cl_image_path @flat.photo1%>')">
-              </div>
-              <div class="item" style="background-image: url('<%= cl_image_path @flat.photo2%>')">
-              </div>
-              <div class="item" style="background-image: url('<%= cl_image_path @flat.photo3%>')">
-              </div>
-              <div class="item" style="background-image: url('<%= cl_image_path @flat.photo4%>')">
-              </div>
-              <div class="item" style="background-image: url('<%= cl_image_path @flat.photo5%>')">
-              </div>
+            <div class="item active" style="background-image: url('<%= cl_image_path @flat.photo1%>')">
             </div>
-
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="item" style="background-image: url('<%= cl_image_path @flat.photo2%>')">
+            </div>
+            <div class="item" style="background-image: url('<%= cl_image_path @flat.photo3%>')">
+            </div>
+            <div class="item" style="background-image: url('<%= cl_image_path @flat.photo4%>')">
+            </div>
+            <div class="item" style="background-image: url('<%= cl_image_path @flat.photo5%>')">
+            </div>
           </div>
 
-          <div class="row photo_row">
-            <div class="photos_small"> <%= cl_image_tag @flat.photo1, width: 120, height: 80%>
-            </div>
-            <div class="photos_small"> <%= cl_image_tag @flat.photo2, width: 120, height: 80%>
-            </div>
-            <div class="photos_small"> <%= cl_image_tag @flat.photo3, width: 120, height: 80%>
-            </div>
-            <div class="photos_small"> <%= cl_image_tag @flat.photo4, width: 120, height: 80%>
-            </div>
-            <div class="photos_small"> <%= cl_image_tag @flat.photo5, width: 120, height: 80%>
-            </div>
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="photo_row">
+          <div class="photos_small"> <%= cl_image_tag @flat.photo1, width: 125, height: 80%>
+          </div>
+          <div class="photos_small"> <%= cl_image_tag @flat.photo2, width: 125, height: 80%>
+          </div>
+          <div class="photos_small"> <%= cl_image_tag @flat.photo3, width: 125, height: 80%>
+          </div>
+          <div class="photos_small"> <%= cl_image_tag @flat.photo4, width: 125, height: 80%>
+          </div>
+          <div class="photos_small"> <%= cl_image_tag @flat.photo5, width: 125, height: 80%>
           </div>
         </div>
       </div>
 
-      <div class="row col-md-4 reviews-box">
-        <!-- FB FRIENDS -->
-        <i class="fab fa-facebook-f"></i>
-        <div class="review-box">
-          <% if @lived_in.empty? %>
-          <p> None of your friends have lived in this apartment </p>
-          <% else %>
-          <% @lived_in.each do |friend| %>
-          <p><%= friend.first_name %> has lived in this apartment!</p>
-          <% end %>
-          <% end %>
+
+     <!--  <div class="space">
+     </div> -->
+     <!-- DESCRIPTION -->
+
+     <div class='description'>
+      <p ><%= @flat.description %></p>
+    </div>
 
 
-          <% if @lived_close.empty? %>
-          <p> None of your friends have lived close by to this apartment </p>
-          <% else %>
-          <% @lived_close.each do |friend| %>
-          <p><%= friend.first_name %> has lived close by!</p>
-          <% end %>
-          <% end %>
-        </div>
+    <div class="additional-info">
 
-        <div>
-          <!-- REVIEWS -->
-          <div class="review-box">
-            <p>Reviews</p>
-            <% if @flat.reviews.empty? %>
-            <p>There are no reviews for this apartment yet</p>
-            <% else %>
-            <% @flat.reviews.each do |review| %>
-            <div class="star-ratings-css">
-              <div class="star-ratings-css-top" style="width: <%= review.rating*15 %>%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            </div>
-            "<%= review.comment %>"
-            - <%= review.tenant.first_name %>
-            <% end %>
-            <% end %>
-          </div>
-        </div>
+      <!-- FB FRIENDS -->
+      <div class="review-list line-full">
 
+        <p>Reviews (<%= @flat.reviews.count %>)</p>
+        <% if @flat.reviews.empty? %>
+        <p>There are no reviews for this apartment yet</p>
+        <% else %>
+        <% @flat.reviews.each do |review| %>
+        <% @score =  review.rating %>
+        <%= render "shared/star-ratings"%>
+        "<%= review.comment %>"
+        - <%= review.tenant.first_name %>
+        <% end %>
+        <% end %>
+      </div>
+
+      <!-- MAP -->
+      <div
+      id="map"
+      style="width: 100%;
+      height: 350px;
+      margin-top: 30px;
+      /*margin-bottom: 30px;*/
+      padding-left: 0px"
+      data-markers="<%= @markers.to_json %>"
+      data-friends-close-markers="<%= @friend_markers_close.to_json %>"
+      data-friends-in-markers="<%= @friend_markers_in.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+
+
+
+      <div class="map-info">
+        <% if @lived_in.empty? %>
+        <p> <i class="fas fa-ban"> </i> None of your friends have lived in this apartment </p>
+        <% else %>
+        <% @lived_in.each do |friend| %>
+        <p><i class="fab fa-facebook-square"> </i> <%= friend.first_name %> <%= friend.last_name%> has lived in this apartment!</p>
+        <% end %>
+        <% end %>
+
+        <% if @lived_close.empty? %>
+        <p> <i class="fas fa-ban"> </i>None of your friends have lived close to this apartment </p>
+        <% else %>
+        <% @lived_close.each do |friend| %>
+        <p><i class="fab fa-facebook-square"> </i><%= friend.first_name %> <%= friend.last_name%>  has lived close by!</p>
+        <% end %>
+        <% end %>
+      </div>
+
+
+
+      <!-- REVIEWS -->
+
+
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <div class="col-md-4 reviews-box">
+    <h3><%= @flat.bedrooms %> bedroom flat </h3>
+
+    <div>
+      <div><h6><%= @flat.address %> </h6></div>
+      <div><h5>€<%= @flat.rental_price %> per month</h5></div>
+      <div>
+        <%= @flat.bedrooms %> <i class="fas fa-bed"></i>
+        <%= @flat.bathrooms %> <i class="fas fa-bath"></i>
+        <%= @flat.size %>m²
+      </div>
+
+      <% @score =  @average %>
+      <%= render "shared/star-ratings"%>
+      <p class="review-count"> (<% if @flat.reviews.count == nil %>
+        <%= "No reviews yet"  %>
+        <% else %>
+        <%= @flat.reviews.count %> reviews)
+        <% end %>
+      </p>
+    </div>
+
+    <div class="row stars-show">
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> Area </p>
+        <% @score =  @area_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> Noise level </p>
+        <% @score =  @noise_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> General condition </p>
+        <% @score =  @condition_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> Energy efficiency </p>
+        <% @score =  @energy_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> Landlord </p>
+        <% @score =  @landlord_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+      <div class="col-xs-6 user-review">
+        <p class="criteria-show"> Water (plumbing) </p>
+        <% @score =  @plumbing_average %>
+        <%= render "shared/star-ratings"%>
+      </div>
+    </div>
+    <div>
+
+      <!-- MESSAGE BOX -->
+
+      <div class="message-box line">
+        <%= simple_form_for @viewing do |f| %>
+        <%= f.hidden_field :flat_id %>
+        <%= f.input :message, :label => 'Interested? Message the landlord to arrange a viewing:' %>
+        <%= f.submit "Message", class: "btn-orange" %>
+        <% end %>
       </div>
     </div>
 
-    <!-- HIGH-LEVEL DETAILS -->
-
-    <div>
-      <p><%= @flat.description %></p>
-    </div>
-
-
-    <!-- MAP -->
-    <div
-    id="map"
-    style="width: 100%;
-    height: 250px;
-    margin-top: 40px;
-    padding-left: 10px"
-    data-markers="<%= @markers.to_json %>"
-
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
-
-
-    <!-- MESSAGE BOX -->
-    <%= simple_form_for @viewing do |f| %>
-    <%= f.hidden_field :flat_id %>
-    <%= f.input :message, :label => 'Interested? Message the landlord to arrange a viewing' %>
-    <%= f.button :submit  %>
-    <% end %>
   </div>
 </div>
