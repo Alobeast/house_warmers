@@ -67,6 +67,11 @@ class FlatsController < ApplicationController
       name = User.find(id)
     end
 
+    # @flat.reviews[0].rating = flat_average(@flat)
+
+    # raise
+    @flat.reviews[0].rating = @flat.total_average
+
     # RATING AVERAGES
     ratings = ratings_array(@flat, :rating)
     @average = average(ratings)
@@ -128,6 +133,13 @@ def create_marker(flats)
     }
   end
 end
+
+# def flat_average(flat)
+#     final_rating = (flat.reviews[0].area_rating + flat.reviews[0].condition_rating
+#       + flat.reviews[0].noise_rating + flat.reviews[0].plumbing_rating +
+#       flat.reviews[0].energy_rating + flat.reviews[0].landlord_rating) / 6
+#     return final_rating
+#   end
 
 def ratings_array(flat, rating_column)
   flat.reviews.map do |r|

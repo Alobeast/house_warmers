@@ -33,12 +33,12 @@ class Flat < ApplicationRecord
     average / 10.0
   end
 
-  def flat_average(flat)
-    final_rating = (flat.area_rating + flat.condition_rating + flat.noise_rating
-      + flat.plumbing_rating + flat.energy_rating + flat.landlord_rating) / 6
-    flat.rating = final_rating
-    return flat.rating
+  def total_average
+    review = reviews[0]
+    sum = review.area_rating + review.noise_rating + review.condition_rating + review.energy_rating + review.landlord_rating + review.plumbing_rating
+    return sum / 6
   end
+
 
 
 # include PgSearch
