@@ -1,9 +1,10 @@
 .show_photos {
-  width: 700px;
+  width: 100%;
+  background-color: white;
 }
 
 .carousel-inner .item {
-   height:450px;
+   height:380px;
    background-size:cover;
    background-position: center center;
 
@@ -12,11 +13,31 @@
 #carousel-example-generic {
   // width: 900px;
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-  margin-bottom: 20px;
-  // margin-top: 40px;
+  margin: 0px;
+}
+
+.carousel.slide {
+  margin: 0px;
 }
 
 .photo_row {
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  background-color: $light-gray;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  margin: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
+
+.carousel-box {
+  // margin-top: 40px;
+  background-color: white;
+  // padding: 15px;
+  // box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  // border-radius: 5px;
+}
+

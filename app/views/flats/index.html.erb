@@ -1,28 +1,24 @@
 
-  <div class="content">
-    <div class="card container">
-      <h1>Start your search here</h1>
       <div class="search-bar">
 
           <%= form_tag flats_path, method: :get do %>
 
           <div class="search-bar-location">
             <% select_tag "location"%>
-            <a class="searchin"><%= text_field_tag :location, params[:location], placeholder: 'City'%></a>
-            <% radius = ["radius", 1, 5, 10, 20, 50] %>
+            <%= text_field_tag :location, params[:location], placeholder: 'Search for city, postcode, adress, etc.'%>
+            <% radius = [["♥",""], ["1km",1], ["2km",2], ["5km",5], ["10km",10], ["20km",10]] %>
             <%= select_tag "radius", options_for_select(radius, @radius)%>
           </div>
 
           <div class = "search-bar-budget-size-bedrooms">
-            <%= label_tag(:q, 'Budget maximum')%>
-            <% price = ["", 500, 1000, 1500, 2000, 2500] %>
+
+            <% price = [["maximum budget",""],["€500",500],["€1000",1000],["€1500",1500],["€2000",2000],["€2500",2500]] %>
             <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
 
-            <%= label_tag(:q, "Minimum size") %>
-            <% size = ["", 25, 50, 75, 100, 125, 150] %>
+            <% size = [["m",""],["25m",25],["50m",50],["75m",75],["100m",100],["150",150]] %>
             <%= select_tag "size", options_for_select(size, @size) %>
 
-            <%= label_tag(:q, "Number of bedrooms") %>
+
             <% bedrooms = ["", 0, 1, 2, 3, 4, 5] %>
             <%= select_tag "bedrooms", options_for_select(bedrooms, @bedrooms) %>
           </div>
@@ -41,10 +37,12 @@
           <% end %>
 
       </div>
+      <div class="content">
+    <div class="card container">
 
       <% @flats.each_with_index do |flat, index| %>
 
-      <div class="blog-card" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)">
+      <div class="blog-card pointer" onmouseenter="hilightMarker(<%= flat.id %>)" onmouseleave="unhilightMarker(<%= flat.id %>)" onclick=document.location="<%= flat_path(flat) %>">
         <div class="meta">
           <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
           <ul class="details">
@@ -61,8 +59,8 @@
           <p> <%= flat.description %></p>
 
           <p class="read-more">
-          <%= flat.average_rating == 0 ? "" : flat.average_rating %>
-            <%= link_to "Details", flat_path(flat.id)%>
+          <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
+
           </p>
 
         </div>
@@ -74,7 +72,7 @@
     <div
     id="map"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" class="index-map">
   </div>
 
 </div>

@@ -1,0 +1,35 @@
+.card-deposit {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+  width: 800px;
+  height: 450px;
+  margin-top: 50px;
+  border-radius: 5px;
+  text-align: center;
+}
+.container-deposit {
+    display: flex;
+    justify-content: center
+  }
+
+.card-deposit > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-deposit h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-deposit p {
+  font-size: 15px;
+
+}
+
+
+
+

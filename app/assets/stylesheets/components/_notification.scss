@@ -8,24 +8,36 @@
   border-radius: 5px;
   // box-shadow: 1px 1px #bfbfbf;
   opacity: 0.8;
-  box-shadow: 0 9px 7px 2px rgba(#000, .1);
+
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 125px;
+
 }
 
 .notification-btn {
   background-color: $blue;
   opacity: 0.8;
-      font-size: 13px;
+  font-size: 13px;
 
 }
 
+img.notification-photo {
+  border-radius: 5px;
+}
 
 .notification-btn:hover {
   background-color: $blue;
   opacity: 1;
+  transition: all 0.2s ease-in;
 }
 
 .notification:hover {
   opacity: 1;
+  transition: all 0.2s ease-in;
 }
 
 .notification .notification-content {
