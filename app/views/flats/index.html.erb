@@ -6,18 +6,17 @@
           <div class="search-bar-location">
             <% select_tag "location"%>
             <%= text_field_tag :location, params[:location], placeholder: 'Search for city, postcode, adress, etc.'%>
-            <% radius = [["♥",""], ["1km",1], ["2km",2], ["5km",5], ["10km",10], ["20km",10]] %>
+            <% radius = [["♥",9], ["1km",1], ["2km",2], ["5km",5], ["10km",10], ["20km",20]] %>
             <%= select_tag "radius", options_for_select(radius, @radius)%>
           </div>
 
           <div class = "search-bar-budget-size-bedrooms">
 
             <% price = [["maximum budget",""],["€500",500],["€1000",1000],["€1500",1500],["€2000",2000],["€2500",2500]] %>
-            <%= select_tag "rental_price", options_for_select(price, @rental_price)%>
+            <%= select_tag( "rental_price", options_for_select(price, @rental_price)) %>
 
-            <% size = [["m",""],["25m",25],["50m",50],["75m",75],["100m",100],["150",150]] %>
+            <% size = [["size",""],["25m",25],["50m",50],["75m",75],["100m",100],["150",150]] %>
             <%= select_tag "size", options_for_select(size, @size) %>
-
 
             <% bedrooms = ["", 0, 1, 2, 3, 4, 5] %>
             <%= select_tag "bedrooms", options_for_select(bedrooms, @bedrooms) %>
@@ -25,8 +24,10 @@
 
           <div class = "search-bar-rating">
             <%= label_tag(:q, "Minimum rating") %>
-            <% rating = ["", 0, 1, 2, 3, 4, 5] %>
-            <%= select_tag "rating", options_for_select(rating, @rating) %>
+            <% @name = "ratings" %>
+            <%= render "shared/reviews"%>
+
+
           </div>
 
           <div>
