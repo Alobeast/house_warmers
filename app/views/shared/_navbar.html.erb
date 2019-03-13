@@ -11,7 +11,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Reviews", reviews_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Search reviews", reviews_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Leave review", new_review_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Properties", flats_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -51,7 +52,7 @@
       <ul class="dropdown-menu dropdown-menu-right">
         <li><a href="#">Dashboard</a></li>
         <li><a href="#">Reviews</a></li>
-        <li><a href="#">Property</a></li>
+        <li><a href="#">Properties</a></li>
       </ul>
     </div>
   </div>

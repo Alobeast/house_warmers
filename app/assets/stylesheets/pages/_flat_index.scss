@@ -9,6 +9,8 @@ div.card.container {
   padding-right: 70px;
   text-align: center;
   position: relative;
+}
+.searchin{
   background: #D9EAF7;
 }
 
@@ -16,6 +18,7 @@ div.card.container {
 .search-bar-location {
   width: 100%;
   display: flex;
+
   padding-bottom: 20px;
 
   input {
@@ -27,6 +30,7 @@ div.card.container {
     padding-left: 16px;
     padding-right: 1px;
     margin-right: 20px;
+
   }
 
   select {
@@ -38,6 +42,7 @@ div.card.container {
     -moz-appearance: none;
     appearance: none;       /* remove default arrow */
     position: relative;
+
   }
 }
 
@@ -70,13 +75,13 @@ div.card.container {
 .search-bar-rating {
   width: 100%;
   display: flex;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;display: inline-block;
 
   select {
     flex: 1;
     background-color: white;
     border-radius: 0px;
-    border-width: 1px;
+    border-width: 1px;display: inline-block;
     border-style: solid;
     border-color: rgb(166, 166, 166);
     border-image: initial;
@@ -105,7 +110,7 @@ div.card.container {
     display: flex;
     flex-direction: column;
     margin: 3.78rem auto;
-    box-shadow: 0 5px 5px 2px rgba(#000, .1);
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
     margin-bottom: 1.6%;
     background: $color_white;
     line-height: 1.4;

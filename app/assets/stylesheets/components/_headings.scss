@@ -1,0 +1,41 @@
+.h6 {
+  color: $purple;
+}
+
+
+.fa-facebook-square {
+  color: rgb(72, 104, 173);
+}
+
+
+.line {
+  position: relative;
+  margin: 1rem 0 0;
+  // color: $blue;
+    margin-top: 1.25rem;
+    &:before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      background: $blue;
+      width: 40px;
+      top: -0.75rem;
+      border-radius: 3px;
+    }
+}
+
+.line-full {
+  position: relative;
+  margin: 1rem 0 0;
+  // color: $blue;
+    margin-top: 1.25rem;
+    &:before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background: $blue;
+      width: 100%;
+      top: -1.75rem;
+      border-radius: 3px;
+    }
+}
