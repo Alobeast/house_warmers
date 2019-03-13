@@ -11,15 +11,20 @@
 </div>
 <div class="absolute">
 
-  <p class="homep">Looking for a rental property in the Netherlands. You will find it on Nested Rental Properties</p>
-  <div class = "2buttons">
-    <div class="button home">
-      <%= link_to "Search properties", flats_path %>
+  <p class="homep"> Fair rentals for tenants. </p>
+  <div>
+
+  <div id="bootstrap-override" class="btnprop">
+    <%= link_to "Search properties", flats_path %>
+  </div>
+  <div class="review-btns">
+    <div id="bootstrap-override" class="btnrev">
+      <%= link_to "Leave a review", new_review_path %>
     </div>
 
-    <div class="button1 home">
-      <%= link_to "Reviews", new_review_path %>
-
+    <div id="bootstrap-override" class="btnrev">
+      <%= link_to "Search reviews", reviews_path %>
     </div>
   </div>
+</div>
 </div>

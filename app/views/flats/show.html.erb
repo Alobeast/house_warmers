@@ -44,147 +44,142 @@
         </div>
       </div>
 
-     <!-- DESCRIPTION -->
+      <!-- DESCRIPTION -->
 
-    <div class='flatdetails'>
-      <p ><%= @flat.description %></p>
+      <div class='flatdetails'>
+        <p ><%= @flat.description %></p>
+      </div>
+
+      <div class="additional-info">
+
+        <!-- FB FRIENDS -->
+        <div class="review-list line-full">
+
+          <p>Reviews (<%= @flat.reviews.count %>)</p>
+          <% if @flat.reviews.empty? %>
+          <p>There are no reviews for this apartment yet</p>
+          <% else %>
+          <% @flat.reviews.each do |review| %>
+          <% @score =  review.rating %>
+          <p><%= render "shared/star-ratings"%></p>
+          "<%= review.comment %>"
+          - <%= review.tenant.first_name %>
+          <% end %>
+          <% end %>
+        </div>
+
+        <!-- MAP -->
+        <div
+        id="map"
+        style="width: 100%;
+        height: 350px;
+        margin-top: 30px;
+        padding-left: 0px"
+        data-markers="<%= @markers.to_json %>"
+        data-friends-close-markers="<%= @friend_markers_close.to_json %>"
+        data-friends-in-markers="<%= @friend_markers_in.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+
+        <div class="map-info">
+          <% if @lived_in.empty? %>
+          <p> <i class="fas fa-ban"> </i> None of your friends have lived in this apartment </p>
+          <% else %>
+          <% @lived_in.each do |friend| %>
+          <p><i class="fab fa-facebook-square"> </i> <%= friend.first_name %> <%= friend.last_name%> has lived in this apartment!</p>
+          <% end %>
+          <% end %>
+
+          <% if @lived_close.empty? %>
+          <p> <i class="fas fa-ban"> </i>None of your friends have lived close to this apartment </p>
+          <% else %>
+          <% @lived_close.each do |friend| %>
+          <p><i class="fab fa-facebook-square"> </i><%= friend.first_name %> <%= friend.last_name%>  has lived close by!</p>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
 
 
 
-    <div class="additional-info">
+        <!-- REVIEWS -->
 
-      <!-- FB FRIENDS -->
-      <div class="review-list line-full">
+    <div class="col-md-4 reviews-box">
+      <h3><%= @flat.bedrooms %> bedroom flat </h3>
 
-        <p>Reviews (<%= @flat.reviews.count %>)</p>
-        <% if @flat.reviews.empty? %>
-        <p>There are no reviews for this apartment yet</p>
-        <% else %>
-        <% @flat.reviews.each do |review| %>
-        <% @score =  review.rating %>
-        <%= render "shared/star-ratings"%>
-        "<%= review.comment %>"
-        - <%= review.tenant.first_name %>
-        <% end %>
-        <% end %>
-      </div>
-
-      <!-- MAP -->
-      <div
-      id="map"
-      style="width: 100%;
-      height: 350px;
-      margin-top: 30px;
-      padding-left: 0px"
-      data-markers="<%= @markers.to_json %>"
-      data-friends-close-markers="<%= @friend_markers_close.to_json %>"
-      data-friends-in-markers="<%= @friend_markers_in.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-
-      <div class="map-info">
-        <% if @lived_in.empty? %>
-        <p> <i class="fas fa-ban"> </i> None of your friends have lived in this apartment </p>
-        <% else %>
-        <% @lived_in.each do |friend| %>
-        <p><i class="fab fa-facebook-square"> </i> <%= friend.first_name %> <%= friend.last_name%> has lived in this apartment!</p>
-        <% end %>
-        <% end %>
-
-        <% if @lived_close.empty? %>
-        <p> <i class="fas fa-ban"> </i>None of your friends have lived close to this apartment </p>
-        <% else %>
-        <% @lived_close.each do |friend| %>
-        <p><i class="fab fa-facebook-square"> </i><%= friend.first_name %> <%= friend.last_name%>  has lived close by!</p>
-        <% end %>
-        <% end %>
-      </div>
-
-
-
-      <!-- REVIEWS -->
-
-
-    </div>
-  </div>
-  <!-- </div> -->
-
-  <div class="col-md-4 reviews-box">
-    <h3><%= @flat.bedrooms %> bedroom flat </h3>
-
-    <div>
-      <div><h6><%= @flat.address %> </h6></div>
-      <div><h5>€<%= @flat.rental_price %> per month</h5></div>
       <div>
-        <%= @flat.bedrooms %> <i class="fas fa-bed"></i>
-        <%= @flat.bathrooms %> <i class="fas fa-bath"></i>
-        <%= @flat.size %>m²
+        <div><h6><%= @flat.address %> </h6></div>
+        <div><h5>€<%= @flat.rental_price %> per month</h5></div>
+        <div>
+          <p><%= @flat.bedrooms %> <i class="fas fa-bed icons"> </i>
+          <%= @flat.bathrooms %> <i class="fas fa-bath icons"> </i>
+          <%= @flat.size %>m²</p>
+        </div>
+
+        <% @score =  @average %>
+        <%= render "shared/star-ratings"%>
+        <p class="review-count"> (<% if @flat.reviews.count == nil %>
+          <%= "No reviews yet"  %>
+          <% else %>
+          <%= @flat.reviews.count %> reviews)
+          <% end %>
+        </p>
       </div>
 
-      <% @score =  @average %>
-      <%= render "shared/star-ratings"%>
-      <p class="review-count"> (<% if @flat.reviews.count == nil %>
-        <%= "No reviews yet"  %>
-        <% else %>
-        <%= @flat.reviews.count %> reviews)
-        <% end %>
-      </p>
+      <div class="row stars-show">
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> Area </p>
+          <% @score =  @area_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> Noise level </p>
+          <% @score =  @noise_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> General condition </p>
+          <% @score =  @condition_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> Energy efficiency </p>
+          <% @score =  @energy_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> Landlord </p>
+          <% @score =  @landlord_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+        <div class="col-xs-6 user-review">
+          <p class="criteria-show"> Water (plumbing) </p>
+          <% @score =  @plumbing_average %>
+          <%= render "shared/star-ratings"%>
+        </div>
+      </div>
+      <div>
+
+        <!-- MESSAGE BOX -->
+
+        <div class="message-box line">
+          <%= simple_form_for @viewing do |f| %>
+          <%= f.hidden_field :flat_id %>
+          <%= f.input :message, :label => 'Interested? Message the landlord to arrange a viewing:' %>
+          <%= f.submit "Message", class: "btn-orange" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <div class="row stars-show">
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> Area </p>
-        <% @score =  @area_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> Noise level </p>
-        <% @score =  @noise_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> General condition </p>
-        <% @score =  @condition_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> Energy efficiency </p>
-        <% @score =  @energy_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> Landlord </p>
-        <% @score =  @landlord_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-      <div class="col-xs-6 user-review">
-        <p class="criteria-show"> Water (plumbing) </p>
-        <% @score =  @plumbing_average %>
-        <%= render "shared/star-ratings"%>
-      </div>
-    </div>
-    <div>
-
-      <!-- MESSAGE BOX -->
-
-      <div class="message-box line">
-        <%= simple_form_for @viewing do |f| %>
-        <%= f.hidden_field :flat_id %>
-        <%= f.input :message, :label => 'Interested? Message the landlord to arrange a viewing:' %>
-        <%= f.submit "Message", class: "btn-orange" %>
-        <% end %>
-      </div>
-    </div>
-
   </div>
-  <div class="footer">
+</div>
+
+<div class="footer">
   <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-</div>
 </div>

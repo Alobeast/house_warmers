@@ -5,14 +5,14 @@ $secondary-darker: #838ea0;
 .home-banner{
   overflow: hidden;
   display: flex;
-  background-image: asset-url('Amsterdam2.png');
+  background-image: asset-url('AmsterdamYELLOW2.png');
   // background-attachment: fixed;
   background-attachment: relative;
   // position: relative; top: 0; overflow:scroll;
   background-repeat: no-repeat;
   background-size: 85%;
   width: 100% ;
-  height: 780px ;
+  height: 100vh ;
   z-index: 0;
   margin-top: -40px;
   // top: 0;
@@ -25,19 +25,19 @@ $secondary-darker: #838ea0;
   }
 
   &.one {
-    background-image: asset-url('Amsterdam2.png');
+    background-image: asset-url('AmsterdamYELLOW1.png');
   }
 
   &.two {
-    background-image: asset-url('Amsterdam1.png');
+    background-image: asset-url('AmsterdamYELLOW2.png');
   }
 
   &.three {
-    background-image: asset-url('Amsterdam3.png');
+    background-image: asset-url('AmsterdamYELLOW3.png');
   }
 
   &.four {
-    background-image: asset-url('Amsterdam4.png');
+    background-image: asset-url('AmsterdamYELLOW2.png');
   }
 }
 
@@ -54,21 +54,56 @@ $secondary-darker: #838ea0;
 .absolute {
   position: absolute;
   display: flex;
+  // background-color: $blue;
+  // opacity: 0.3;
   flex-direction: column;
   justify-content: space-around;
 
-  top: 196px;
-  right: 0;
-  width: 375px;
-  height: 500px;
+  top: 50px;
+  right: 140px;
+  width: 300px;
+  height: 600px;
 }
 
-.homep{
+.homep {
   color:white;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 45px;
+  padding: 20px;
+  margin-top: 150px;
 }
-.button.home {
+
+#bootstrap-override.btnprop a {
+  text-decoration: none;
+  // color: $blue;
   background-color: white;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  opacity: 1;
   border: 1px #222222 solid;
+  border-color: white;
+  color: $dark-blue;
+  font-weight: bold;
+  padding: 10px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+  // margin-left: 20px;
+  // margin-right: 60px;
+}
+
+#bootstrap-override.btnrev a {
+  text-decoration: none;
+  // color: $blue;
+  background-color: $dark-blue;
+  opacity: 1;
+  border: 1px #222222 solid;
+  border-color: white;
   color: white;
   padding: 10px ;
   text-align: center;
@@ -78,39 +113,59 @@ $secondary-darker: #838ea0;
   margin: 4px 2px;
   border-radius: 3px;
   cursor: pointer;
-}
-.button.home:hover {
-  a{
-
-    text-decoration: none;
-  }
-  font-size: 16px;
+  width: 100%;
+  // margin-left: 20px;
+  // margin-right: 60px;
 }
 
-
-.button1.home {
-  background-color: white;
-  border: 1px #222222 solid;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 3px;
-  margin: 4px ;
-  cursor: pointer;
-}
-.button1.home:hover {
-  a{
-
-
-    text-decoration: none;
-  }
-  font-size: 16px;
+.review-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
 }
 
-.2buttons{
-  position:relative;
-  bottom: 0px;
+.btnrev:hover {
+  opacity: 0.6;
 }
+
+.btnrev {
+  width: 47%;
+}
+
+.btnprop {
+  margin-top: -50px;
+}
+
+.btnprop:hover {
+  opacity: 0.6;
+}
+// .button.home:hover {
+//   a{
+
+//     text-decoration: none;
+//   }
+//   font-size: 16px;
+// }
+
+
+// .button1 {
+//   background-color: white;
+//   border: 2px #222222 solid;
+//   border-color: white;
+//   color: white;
+//   padding: 10px ;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   margin: 4px 2px;
+//   border-radius: 3px;
+//   cursor: pointer;
+// }
+
+
+// .2buttons{
+//   position:relative;
+//   top: 150px;
+//   text-decoration: none;
+// }
