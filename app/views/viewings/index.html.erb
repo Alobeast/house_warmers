@@ -6,7 +6,7 @@
   <div class="notification-container">
     <% @viewings.each do |viewing| %>
     <div class="notification">
-      <%= cl_image_tag viewing.flat.photo1, width: 120, height: 90%>
+      <%= cl_image_tag viewing.flat.photo1, width: 120, height: 90, class: 'notification-photo'%>
 
       <div class="notification-content">
         <h2><%= viewing.flat.address %> </h2>
