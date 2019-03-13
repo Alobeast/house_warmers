@@ -1,5 +1,5 @@
 div.card.container {
-  background-color: $light-gray;
+  background-color: white;
 }
 
 .search-bar {
@@ -20,6 +20,7 @@ div.card.container {
 
   input {
     border: 0px;
+    border-radius: 5px;
     flex: 1;
     padding-top: 11px;
     padding-bottom: 11px;
@@ -31,7 +32,7 @@ div.card.container {
   select {
     padding-left: 100px;
     background-color: white;
-    border-radius: 0px;
+    border-radius: 5px;
     border-width: 0px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -43,19 +44,27 @@ div.card.container {
 .search-bar-budget-size-bedrooms {
   width: 100%;
   display: flex;
-  padding-bottom: 1.5rem;
+  padding-bottom: 20px;
 
   select {
-    flex: 1;
+    flex: 80%;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 16px;
+    padding-right: 16px;
     background-color: white;
-    border-radius: 0px;
+    border-radius: 5px;
     border-width: 0px;
     border-color: rgb(166, 166, 166);
     border-image: initial;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-  }
+}
+
 }
 
 .search-bar-rating {
