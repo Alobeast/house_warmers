@@ -9,6 +9,10 @@
   // box-shadow: 1px 1px #bfbfbf;
   opacity: 0.8;
   box-shadow: 0 9px 7px 2px rgba(#000, .1);
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 125px;
 }
 
 .notification-btn {
@@ -18,6 +22,9 @@
 
 }
 
+img.notification-photo {
+  border-radius: 5px;
+}
 
 .notification-btn:hover {
   background-color: $blue;
