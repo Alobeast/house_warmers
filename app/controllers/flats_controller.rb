@@ -7,9 +7,10 @@ class FlatsController < ApplicationController
     @rental_price = params[:rental_price]
     @size = params[:size]
     @location = params[:location]
-    @rating = params[:rating]
     @radius = params[:radius]
     @bedrooms = params[:bedrooms]
+    @ratings = params[:ratings]
+
 
 
     if @rental_price.present?
@@ -28,13 +29,13 @@ class FlatsController < ApplicationController
     end
 
     if @bedrooms.present?
-      @flats = @flats.where("bedrooms = ?", @bedrooms)
+      @flats = @flats.where("bedrooms >= ?", @bedrooms)
       @markers = create_marker(@flats)
     end
 
-    if @rating.present?
+    if @ratings.present?
       @flats = @flats.select do |flat|
-        flat.average_rating.to_i >= @rating.to_i
+        flat.average_rating.to_i >= @ratings.to_i
       end
       @markers = create_marker(@flats)
     end
@@ -66,11 +67,6 @@ class FlatsController < ApplicationController
       id = tenancy.user_id
       name = User.find(id)
     end
-
-    # @flat.reviews[0].rating = flat_average(@flat)
-
-    # raise
-    @flat.reviews[0].rating = @flat.total_average
 
     # RATING AVERAGES
     ratings = ratings_array(@flat, :rating)
