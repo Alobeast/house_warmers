@@ -68,11 +68,6 @@ class FlatsController < ApplicationController
       name = User.find(id)
     end
 
-    # @flat.reviews[0].rating = flat_average(@flat)
-
-    # raise
-    @flat.reviews[0].rating = @flat.total_average
-
     # RATING AVERAGES
     ratings = ratings_array(@flat, :rating)
     @average = average(ratings)

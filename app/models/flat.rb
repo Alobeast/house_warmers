@@ -33,13 +33,6 @@ class Flat < ApplicationRecord
     average / 10.0
   end
 
-  def total_average
-    review = reviews[0]
-    sum = review.area_rating + review.noise_rating + review.condition_rating + review.energy_rating + review.landlord_rating + review.plumbing_rating
-    return sum / 6
-  end
-
-
 
 # include PgSearch
 #   pg_search_scope :search_by_rental_price_and_size_and_rating,
