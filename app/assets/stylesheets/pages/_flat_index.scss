@@ -19,8 +19,7 @@ div.card.container {
 .search-bar-location {
   width: 100%;
   display: flex;
-
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 
   input {
     border: 0px;
@@ -35,7 +34,8 @@ div.card.container {
   }
 
   select {
-    padding-left: 100px;
+    padding-left: 20px;
+    padding-right: 80px;
     background-color: white;
     border-radius: 5px;
     border-width: 0px;
@@ -43,20 +43,17 @@ div.card.container {
     -moz-appearance: none;
     appearance: none;       /* remove default arrow */
     position: relative;
-
   }
 }
 
-.search-bar-budget-size-bedrooms {
-  width: 100%;
+.search-bar-budget-size-bedrooms-rating {
+
   display: flex;
   padding-bottom: 20px;
+  width: 100%;
 
   select {
-    flex: 80%;
     margin-top: 10px;
-    margin-right: 20px;
-    margin-left: 20px;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 16px;
@@ -69,27 +66,34 @@ div.card.container {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+  }
 }
 
-}
-
-.search-bar-rating {
-  width: 100%;
-  display: flex;
-  padding-bottom: 1.5rem;display: inline-block;
-
-  select {
-    flex: 1;
-    background-color: white;
-    border-radius: 0px;
-    border-width: 1px;display: inline-block;
-    border-style: solid;
-    border-color: rgb(166, 166, 166);
-    border-image: initial;
+.search-bar-budget {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-  }
+    margin-right: 20px;
+}
+
+.search-bar-size {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-right: 20px
+}
+
+.search-bar-bedrooms {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-bar-rating {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .pointer {cursor: pointer;}
