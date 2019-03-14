@@ -24,13 +24,15 @@ class Review < ApplicationRecord
   end
 
   def total_average
-    sum = area_rating + noise_rating + condition_rating + energy_rating + landlord_rating + plumbing_rating
-    return sum / 6
+    sum_long = (area_rating + noise_rating + condition_rating + energy_rating +
+    landlord_rating + plumbing_rating) * 10 / 6
+    sum = sum_long
+    sum / 10.0
   end
 
   private
   def save_rating
-    self.rating = total_average
+    self.rating = total_average.round
   end
 
 end
