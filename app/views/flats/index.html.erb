@@ -63,13 +63,15 @@
         <div class="description">
           <div class="card-title">
             <h1 ><%= flat.address %> </h1>
-            <h1>
-            <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
-            </h1>
+            <div class="flat-index-stars">
+              <% @score =  flat.average_rating %>
+              <%= render "shared/star-ratings"%>
+            </div>
           </div>
 
 
           <p> <%= flat.description %></p>
+
 
 
 
