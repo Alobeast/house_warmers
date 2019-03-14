@@ -119,7 +119,7 @@ div.card.container {
     margin-bottom: 1.6%;
     background: $color_white;
     line-height: 1.4;
-    font-family: sans-serif;
+    font-family: $body-font;
     border-radius: 5px;
     overflow: hidden;
     z-index: 0;
@@ -134,12 +134,14 @@ div.card.container {
     &:hover {
       .photo {
         transform: scale(1.3) rotate(0deg);
+        font-family: $body-font;
       }
     }
     .meta {
       position: relative;
       z-index: 0;
       height: 200px;
+      font-family: $body-font;
     }
     .photo {
       position: absolute;
@@ -168,32 +170,41 @@ div.card.container {
       background: rgba(#000, .6);
       color: $color_white;
       padding: 5px;
+      font-family: $body-font;
       width: 100%;
       font-size: 1.9rem;
       text-decoration: none;
+      display: inline-block;
       a {
         text-decoration: none;
       }
       ul li {
         display: inline-block;
+
       }
 
     .fas.fa-bed:before {
       font-family: "Font Awesome 5 Free";
       content: "\f236";
+      margin: 0px;
       margin-right: 6px;
+      padding: 0px;
 
     }
     .fas.fa-expand-arrows-alt:before {
       font-family: "Font Awesome 5 Free";
       content: "\f0b2";
+      margin: 0px;
       margin-right: 6px;
+      padding: 0px;
     }
 
     .fas.fa-euro-sign:before {
       font-family: "Font Awesome 5 Free";
       content: "\f153";
+      margin: 0px;
       margin-right: 6px;
+      padding: 0px;
 
     }
   }
@@ -203,7 +214,7 @@ div.card.container {
     position: relative;
     z-index: 1;
     h2 {
-      font-family: Poppins, sans-serif;
+      font-family: $body-font;
     }
     h1 {
       line-height: 1;
