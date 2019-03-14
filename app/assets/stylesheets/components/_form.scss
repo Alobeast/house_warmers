@@ -1,5 +1,6 @@
 .review-form {
   margin-top: 40px;
+  margin-bottom: 50px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 6px 7px 2px rgba(#000, .1);
@@ -94,14 +95,14 @@ form {
 }
 
 .form-header {
-  height: 100px;
+  height: 80px;
   h1 {
-  padding-top: 40px;
+  padding-top: 30px;
   text-align: center;
-  color: #C5D86D;
+  color: $blue;
   font-weight: bold;
   font-size: 30px;
-  font-family: "Open Sans", "Helvetica", "sans-serif";
+  // font-family: "Open Sans", "Helvetica", "sans-serif";
   }
 }
 
@@ -150,4 +151,5 @@ form {
 // SHOW PAGE - MESSAGE BOX
 .form-control-label.text.optional {
   font-weight: lighter;
+  font-size: 16px;
 }
