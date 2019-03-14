@@ -9,7 +9,7 @@ marc = User.create!(first_name:'Marc', last_name:'Lachartre', email:'marc@gmail.
   landlord: true, password:'111111')
 alois = User.create!(first_name:'Alois', last_name:'Beard', email:'alois@gmail.com',
   landlord: true, password:'111111')
-catherine = User.create!(first_name:'Catherine', last_name:'Spyropoulos', email:'cath@gmail.com',
+sophie = User.create!(first_name:'Sophie', last_name:'Spyropoulos', email:'cath@gmail.com',
   landlord: true, password:'111111')
 shivani = User.create!(first_name:'Shivani', last_name:'Goolab', email:'shiv@gmail.com',
   landlord: true, password:'111111')
@@ -43,6 +43,7 @@ frederik = User.create!(first_name:'Frederik', last_name:'Blanc', email:'frederi
 mitch = User.create!(first_name:'Mitch', last_name:'Thomas', email:'mitch@gmail.com', password:'111111')
 michelle = User.create!(first_name:'Michelle', last_name:'Stott', email:'michelle@gmail.com', password:'111111')
 alois = User.create!(email: "alois.beard@laposte.net", username: nil, first_name: 'Alois', last_name: 'Beard', password:'111111', profile_pic: nil, provider: "facebook", uid: "10157089276935030", friends: [{"id"=>"10155944089180927", "name"=>"Catherine Spyropoulos"}])
+catherine = User.create!(email: "catspy@webmail.co.za", username: nil, first_name: 'Catherine', last_name: 'Spyropoulos', password:'111111', profile_pic: nil, provider: "facebook", uid: "10155944089180927", friends: [{"id"=>"10157089276935030", "name"=>"Alois Beard"}])
 # Flats
 flat1 = Flat.create!(address:'Bilderdijkkade 46, Amsterdam', bedrooms:1, size:80, build_year:1985, price_cents:75000, description:
   'Charming 1 bedroom apartment with a large bedroom and plenty of storage space. Large and bright living room.
@@ -80,7 +81,7 @@ flat4 = Flat.create!(address:'Sarphatipark 34, Amsterdam',
   bedrooms:2, size:122, build_year:1975, price_cents:79000, description:
   'Large 2 bedroom apartment right by City Park. The apartment is a 2 bedroom 2 bathroom aparmtent
   with generous storage space and a recently refurbished kitchen. Close to the local cafes and shops and
-  a 3 min walk to the metro.', rental_price:2400, landlord:catherine, available: true,
+  a 3 min walk to the metro.', rental_price:2400, landlord:sophie, available: true,
   tenant:tinco, bathrooms:2, letting_status:"pending",
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4B.jpg',
@@ -123,12 +124,12 @@ flat7 = Flat.create!(address:'Den Texstraat 8, Amsterdam',
 flat8 = Flat.create!(address:'Elisabeth Wolffstraat 10, Amsterdam',
   bedrooms:2, size:122, build_year:1935, price_cents:75000, description:
   'Recently renovated 2 bedroom apartment in the heart of Oud West. The apartment
-  was renovated in 2017 and boasts a modern and sleek finish. The bathroom has a large rain shower. 5min walk to the metro.', rental_price:2400, landlord:daniel, tenant:anthony, bathrooms:2, letting_status:"pending", available: true,
+  was renovated in 2017 and boasts a modern and sleek finish. The bathroom has a large rain shower. 5min walk to the metro.', rental_price:1900, landlord:daniel, tenant:anthony, bathrooms:2, letting_status:"pending", available: true,
   remote_photo1_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8A.jpg',
   remote_photo2_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8B.jpg',
   remote_photo3_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8C.jpg',
-  remote_photo4_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8D.jpg',
-  remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment8E.jpg')
+  remote_photo4_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment4D.jpg',
+  remote_photo5_url:'https://res.cloudinary.com/dzlhbbkad/image/upload/v1551795007/apartment10E.jpg')
 
 flat9 = Flat.create!(address:'Wilhelminastraat 22, Amsterdam',
   bedrooms:2, size:92, build_year:1982, price_cents:70000, description:
@@ -169,5 +170,6 @@ review12 = Review.create!(rating:3, comment:'Although this is a great looking fl
 # Tenancies
 
 tenancy1 = Tenancy.create!(flat:flat3, user:alois)
+tenancy2 = Tenancy.create!(flat:flat1, user:catherine)
 
 
