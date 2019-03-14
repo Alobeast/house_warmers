@@ -71,7 +71,7 @@ class FlatsController < ApplicationController
     # RATING AVERAGES
     ratings = ratings_array(@flat, :rating)
     @average = average(ratings)
-
+    # raise
     area_ratings = ratings_array(@flat, :area_rating)
     @area_average = average(area_ratings)
 
@@ -147,7 +147,9 @@ def average(ratings)
   if ratings.count == 0
     average = 0
   else
-    average = ratings.sum / ratings.count
+    average_long = ratings.sum * 10 / ratings.count
+    answer = average_long.round
+    average = answer / 10.0
   end
   return average
 end

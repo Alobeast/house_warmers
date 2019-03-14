@@ -169,23 +169,38 @@ div.card.container {
 }
 
 .blog-card {
-  opacity: 0.8;
-  display: flex;
-  flex-direction: column;
-  margin: 3.78rem auto;
-  box-shadow: 0 3px 7px 1px rgba(#000, .1);
-  margin-bottom: 1.6%;
-  background: $color_white;
-  line-height: 1.4;
-  font-family: sans-serif;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 0;
 
-  a {
-    color: inherit;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    margin: 3.78rem auto;
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
+    margin-bottom: 1.6%;
+    background: $color_white;
+    line-height: 1.4;
+    font-family: $body-font;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+
+    a {
+      color: inherit;
+      &:hover {
+        color: $color_prime;
+
+      }
+    }
     &:hover {
-      color: $color_prime;
+      .photo {
+        transform: scale(1.3) rotate(0deg);
+        font-family: $body-font;
+      }
+    }
+    .meta {
+      position: relative;
+      z-index: 0;
+      height: 200px;
+      font-family: $body-font;
 
     }
   }
@@ -226,58 +241,71 @@ div.card.container {
       background: rgba(#000, .6);
       color: $color_white;
       padding: 5px;
+      font-family: $body-font;
       width: 100%;
       font-size: 1.9rem;
       text-decoration: none;
+      display: inline-block;
       a {
         text-decoration: none;
       }
       ul li {
         display: inline-block;
-      }
-
-      .fas.fa-bed:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f236";
-        margin-right: 6px;
 
       }
-      .fas.fa-expand-arrows-alt:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f0b2";
-        margin-right: 6px;
-      }
 
-      .fas.fa-euro-sign:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f153";
-        margin-right: 6px;
 
+
+    .fas.fa-bed:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f236";
+      margin: 0px;
+      margin-right: 6px;
+      padding: 0px;
+
+    }
+    .fas.fa-expand-arrows-alt:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0b2";
+      margin: 0px;
+      margin-right: 6px;
+      padding: 0px;
+    }
+
+    .fas.fa-euro-sign:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f153";
+      margin: 0px;
+      margin-right: 6px;
+      padding: 0px;
       }
     }
-    .description{
-      padding: 1rem;
-      background: $color_white;
-      position: relative;
-      z-index: 1;
-      h2 {
-        font-family: Poppins, sans-serif;
-      }
-      h1 {
-        line-height: 1;
-        margin: 0;
-        font-size: 1.7rem;
-      }
-      h2 {
-        font-size: 1rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        color: $color_grey_dark;
-        margin-top: 5px;
-      }
-      .read-more {
-        text-align: right;
-        text-decoration: none;
+  }
+  
+  .description{
+    padding: 1rem;
+    background: $color_white;
+    position: relative;
+    z-index: 1;
+    h2 {
+      font-family: $body-font;
+    }
+    h1 {
+      line-height: 1;
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color_grey_dark;
+      margin-top: 5px;
+    }
+    .read-more {
+      text-align: right;
+      text-decoration: none;
+
 
         a {
           color: $purple;
@@ -339,13 +367,14 @@ div.card.container {
     }
   }
 
-  #map{
-    position:sticky;
-    top:0;
-    width: 550px;
-    height: 100vh;
-    color:#003459;
-  }
+
+#map{
+  position:sticky;
+  top:0;
+  width: 630px;
+  height: 100vh;
+  color:#003459;
+}
 
 
   .marker {
@@ -356,13 +385,31 @@ div.card.container {
     }
   }
 
-  .card-title {
-    display: flex;
-    justify-content: space-between;
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-card {
+  height: 210px;
+}
+
+
+
+.flat-index-stars .star-ratings-css {
+
+
+  &-top {
+    margin-left: 20px;
+
   }
-
-  .blog-card {
-    height: 200px;
+  &-bottom {
+    margin-left: 20px;
   }
+}
 
-
+.flat-index-stars {
+padding-bottom: 8px;
+}

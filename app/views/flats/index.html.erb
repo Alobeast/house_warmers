@@ -57,24 +57,26 @@
           <div class="photo" style="background-image: url('<%= cl_image_path(flat.photo1) %>')"></div>
           <ul class="details">
 
-            <li class="fas fa-euro-sign"><%= flat.rental_price %></li>
-            <br>
-            <li class="fas fa-bed"><%= flat.bedrooms %></li>
-            <br>
-            <li class="fas fa-expand-arrows-alt"><%= flat.size %>m²</li>
+            <li> <span class ="fas fa-euro-sign"></span> <%= flat.rental_price %>pm</li>
+            <!-- <br> -->
+            <li> <span class ="fas fa-bed"></span> <%= flat.bedrooms %></li>
+            <!-- <br> -->
+            <li> <span class ="fas fa-expand-arrows-alt"></span><%= flat.size %>m²</li>
           </ul>
         </div>
 
         <div class="description">
           <div class="card-title">
             <h1 ><%= flat.address %> </h1>
-            <h1>
-            <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
-            </h1>
+            <div class="flat-index-stars">
+              <% @score =  flat.average_rating %>
+              <%= render "shared/star-ratings"%>
+            </div>
           </div>
 
 
-          <p> <%= flat.description %></p>
+          <div class="line"> <%= flat.description %></div>
+
 
 
 
