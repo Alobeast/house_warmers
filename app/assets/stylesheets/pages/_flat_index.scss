@@ -3,60 +3,79 @@ div.card.container {
 }
 
 .search-bar {
-  background: #e8e8e8;
-  padding-top: 20px;
+  background: #E8E7E4;
+  padding-top: 5px;
   padding-bottom: 10px;
   padding-left: 70px;
   padding-right: 70px;
   text-align: center;
   position: relative;
 }
-.searchin{
-  background: blue;
+
+.search-bar-location-radius {
+  display: flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width:100%;
 }
 
 
 .search-bar-location {
-  width: 100%;
+  width: 85%;
   display: flex;
-  padding-bottom: 10px;
 
   input {
     border: 0px;
-    border-radius: 5px;
-    flex: 1;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
     padding-top: 11px;
     padding-bottom: 11px;
     padding-left: 16px;
     padding-right: 1px;
-    margin-right: 20px;
-    box-shadow: 0 3px 7px 1px rgba(#000, .1);
-
-  }
-
-  select {
-    padding-left: 20px;
-    padding-right: 80px;
-    background-color: white;
-    border-width: 0px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;       /* remove default arrow */
-    position: relative;
-    box-shadow: 0 3px 7px 1px rgba(#000, .1);
+    box-shadow: 0 0px 7px 1px rgba(#000, .1);
   }
 }
+
+.search-bar-radius {
+  display: flex;
+
+  select {
+    padding: 3px 8px 3px 8px;
+    margin-right: 10px;
+    background-color: white;
+    border-width: 0px;
+    border-left-width: 1px;
+    border-color: rgb(166, 166, 166);
+    border-image: initial;
+    border-radius: 0 5px 5px 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: 3px 0px 4px 1px rgba(#000, .1);
+
+  }
+  label {
+    padding-left: 12px;
+    padding-right:16px;
+    font-weight: 500;
+    background-color: white;
+    color: gray;
+  }
+}
+
+
 
 .search-bar-budget-size-bedrooms-rating {
 
   display: flex;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 65%;
+  justify-content: space-around;
 
   select {
     margin-top: 3px;
-    padding: 3px;
+    padding: 2px;
     background-color: white;
     border-width: 0px;
     border-color: rgb(166, 166, 166);
@@ -69,62 +88,70 @@ div.card.container {
 }
 
 .search-bar-budget {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin-right: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+  label {
+    padding-left: 16px;
+    padding-right:16px;
+    font-weight: 500;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 7px 1px rgba(#000, .1);
-      label {
-        padding-left: 16px;
-        padding-right:16px;
-        font-weight: 500;
-        background-color: white;
-        color: gray;
-      }
+    color: gray;
+  }
 }
 
 .search-bar-size {
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+  margin-right: 20px;
+  border-radius: 5px;
+
+  label {
+    padding-left: 16px;
+    padding-right:16px;
+    font-weight: 500;
     background-color: white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    box-shadow: 0 3px 7px 1px rgba(#000, .1);
-    margin-right: 20px;
-    border-radius: 5px;
+    color: gray;
 
-            label {
-        padding-left: 16px;
-        padding-right:16px;
-        font-weight: 500;
-        background-color: white;
-        color: gray;
-
-      }
+  }
 }
 
 .search-bar-bedrooms {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+  margin-right: 20px;
+  label {
+    padding-left: 16px;
+    padding-right:16px;
+    font-weight: 500;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 7px 1px rgba(#000, .1);
-    margin-right: 20px;
-           label {
-        padding-left: 16px;
-        padding-right:16px;
-        font-weight: 500;
-        background-color: white;
-        color: gray;
-
-      }
+    color: gray;
+  }
+  select {
+    padding-right: 16px;
+  }
 }
 
 .search-bar-rating {
-
-
+ display: flex;
+ align-items:center;
+ label {
+  color: $blue;
+  font-weight:500;
+  margin-bottom: 0px;
+  margin-right: 8px;
+}
 }
 
 .pointer {cursor: pointer;}
@@ -142,6 +169,7 @@ div.card.container {
 }
 
 .blog-card {
+
     opacity: 0.8;
     display: flex;
     flex-direction: column;
@@ -173,25 +201,37 @@ div.card.container {
       z-index: 0;
       height: 200px;
       font-family: $body-font;
-    }
-    .photo {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-size: cover;
-      background-position: center;
-      transition: transform 8s;
-    }
 
-    .details ul {
-      margin: auto;
-      padding: 0;
+    }
+  }
+  &:hover {
+    .photo {
+      transform: scale(1.3) rotate(0deg);
+    }
+  }
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 8s;
+  }
+
+  .details ul {
+    margin: auto;
+    padding: 0;
       // list-style: none;
     }
 
-  .details {
+    .details {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -213,6 +253,8 @@ div.card.container {
         display: inline-block;
 
       }
+
+
 
     .fas.fa-bed:before {
       font-family: "Font Awesome 5 Free";
@@ -236,9 +278,10 @@ div.card.container {
       margin: 0px;
       margin-right: 6px;
       padding: 0px;
-
+      }
     }
   }
+  
   .description{
     padding: 1rem;
     background: $color_white;
@@ -262,6 +305,7 @@ div.card.container {
     .read-more {
       text-align: right;
       text-decoration: none;
+
 
         a {
           color: $purple;
@@ -320,8 +364,9 @@ div.card.container {
         }
       }
 
+    }
   }
-}
+
 
 #map{
   position:sticky;
@@ -332,13 +377,14 @@ div.card.container {
 }
 
 
-.marker {
-  display: block;
-  &.active {
-    color: #f2ad00;
-    z-index: 1;
+  .marker {
+    display: block;
+    &.active {
+      color: #f2ad00;
+      z-index: 1;
+    }
   }
-}
+
 
 .card-title {
   display: flex;
@@ -349,6 +395,7 @@ div.card.container {
 .blog-card {
   height: 210px;
 }
+
 
 
 .flat-index-stars .star-ratings-css {
