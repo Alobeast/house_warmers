@@ -193,7 +193,7 @@ div.card.container {
 
     }
   }
-  .description {
+  .des{
     padding: 1rem;
     background: $color_white;
     position: relative;
@@ -241,7 +241,7 @@ div.card.container {
           height: 1px;
           background: #f2ad00;
           width: 100%;
-          top: -0.75rem;
+          top: -8px;
         }
       }
     }
@@ -259,7 +259,7 @@ div.card.container {
         flex-basis: 40%;
         height: auto;
       }
-      .description {
+      .des {
         flex-basis: 60%;
         &:before {
           transform: skewX(-3deg);
@@ -293,3 +293,14 @@ div.card.container {
     z-index: 1;
   }
 }
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-card {
+  height: 200px;
+}
+
+

@@ -52,14 +52,19 @@
             <li class="fas fa-expand-arrows-alt"><%= flat.size %>m²</li>
           </ul>
         </div>
+
         <div class="description">
-          <h1 ><%= flat.address %></h1>
+          <div class="card-title">
+            <h1 ><%= flat.address %> </h1>
+            <h1>
+            <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
+            </h1>
+          </div>
+
+
           <p> <%= flat.description %></p>
 
-          <p class="read-more">
-          <%= flat.average_rating == 0 ? "No rating yet" : flat.average_rating %>
 
-          </p>
 
         </div>
       </div>
