@@ -197,7 +197,7 @@ div.card.container {
 
     }
   }
-  .des{
+  .description{
     padding: 1rem;
     background: $color_white;
     position: relative;
@@ -263,7 +263,7 @@ div.card.container {
         flex-basis: 40%;
         height: auto;
       }
-      .des {
+      .description {
         flex-basis: 60%;
         &:before {
           transform: skewX(-3deg);
