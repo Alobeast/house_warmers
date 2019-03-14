@@ -151,7 +151,7 @@ div.card.container {
   font-weight:500;
   margin-bottom: 0px;
   margin-right: 8px;
-}
+  }
 }
 
 .pointer {cursor: pointer;}
@@ -203,7 +203,7 @@ div.card.container {
       font-family: $body-font;
 
     }
-  }
+
   &:hover {
     .photo {
       transform: scale(1.3) rotate(0deg);
@@ -253,7 +253,7 @@ div.card.container {
         display: inline-block;
 
       }
-
+    }
 
 
     .fas.fa-bed:before {
@@ -279,9 +279,9 @@ div.card.container {
       margin-right: 6px;
       padding: 0px;
       }
-    }
-  }
-  
+
+
+
   .description{
     padding: 1rem;
     background: $color_white;
