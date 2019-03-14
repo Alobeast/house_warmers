@@ -1,9 +1,11 @@
 .review-form {
   margin-top: 40px;
   margin-bottom: 50px;
-  background-color: white;
+  background-color: #fafafa;
   border-radius: 5px;
+  height: 720px;
   box-shadow: 0 6px 7px 2px rgba(#000, .1);
+  position: relative;
 }
 
 form {
@@ -76,6 +78,7 @@ form {
 
 .criteria {
   margin-bottom: 5px;
+  color: $blue;
 }
 
 .user-review {
@@ -100,7 +103,7 @@ form {
   padding-top: 30px;
   text-align: center;
   color: $blue;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 30px;
   // font-family: "Open Sans", "Helvetica", "sans-serif";
   }
@@ -111,11 +114,11 @@ form {
 }
 
 .form-control-label.string.optional {
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .file.optional {
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .form-control.string.optional {
@@ -152,4 +155,10 @@ form {
 .form-control-label.text.optional {
   font-weight: lighter;
   font-size: 16px;
+}
+
+.lvbtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
