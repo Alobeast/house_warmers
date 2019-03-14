@@ -284,7 +284,7 @@ div.card.container {
 #map{
   position:sticky;
   top:0;
-  width: 655px;
+  width: 630px;
   height: 100vh;
   color:#003459;
 }
@@ -301,10 +301,26 @@ div.card.container {
 .card-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .blog-card {
-  height: 200px;
+  height: 210px;
 }
 
 
+.flat-index-stars .star-ratings-css {
+
+
+  &-top {
+    margin-left: 20px;
+
+  }
+  &-bottom {
+    margin-left: 20px;
+  }
+}
+
+.flat-index-stars {
+padding-bottom: 8px;
+}
