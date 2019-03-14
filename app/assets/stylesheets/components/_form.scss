@@ -60,12 +60,12 @@ form {
 }
 
 .rating label:last-child .icon {
-  color: #000;
+  color: #999999;
 }
 
 .rating:not(:hover) label input:checked ~ .icon,
 .rating:hover label:hover input ~ .icon {
-  color: #09f;
+  color: $yellow;
 }
 
 .rating label input:focus:not(:checked) ~ .icon:last-child {

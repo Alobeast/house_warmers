@@ -3,9 +3,9 @@ div.card.container {
 }
 
 .search-bar {
-  background: #1c6e8c;
+  background: #e8e8e8;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-left: 70px;
   padding-right: 70px;
   text-align: center;
@@ -30,6 +30,7 @@ div.card.container {
     padding-left: 16px;
     padding-right: 1px;
     margin-right: 20px;
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
 
   }
 
@@ -37,35 +38,33 @@ div.card.container {
     padding-left: 20px;
     padding-right: 80px;
     background-color: white;
-    border-radius: 5px;
     border-width: 0px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;       /* remove default arrow */
     position: relative;
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
   }
 }
 
 .search-bar-budget-size-bedrooms-rating {
 
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   width: 100%;
 
   select {
-    margin-top: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 16px;
-    padding-right: 16px;
+    margin-top: 3px;
+    padding: 3px;
     background-color: white;
-    border-radius: 5px;
     border-width: 0px;
     border-color: rgb(166, 166, 166);
     border-image: initial;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
   }
 }
 
@@ -74,26 +73,58 @@ div.card.container {
     -moz-appearance: none;
     appearance: none;
     margin-right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
+      label {
+        padding-left: 16px;
+        padding-right:16px;
+        font-weight: 500;
+        background-color: white;
+        color: gray;
+      }
 }
 
 .search-bar-size {
+    background-color: white;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin-right: 20px
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
+    margin-right: 20px;
+    border-radius: 5px;
+
+            label {
+        padding-left: 16px;
+        padding-right:16px;
+        font-weight: 500;
+        background-color: white;
+        color: gray;
+
+      }
 }
 
 .search-bar-bedrooms {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 7px 1px rgba(#000, .1);
+    margin-right: 20px;
+           label {
+        padding-left: 16px;
+        padding-right:16px;
+        font-weight: 500;
+        background-color: white;
+        color: gray;
+
+      }
 }
 
 .search-bar-rating {
 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+
 }
 
 .pointer {cursor: pointer;}
