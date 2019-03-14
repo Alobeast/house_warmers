@@ -19,9 +19,12 @@
 }
 
 .notification-btn {
+  margin-right: 35px;
   background-color: $blue;
   opacity: 0.8;
-  font-size: 13px;
+  font-size: 15px;
+  border: none;
+  box-shadow: 0 3px 7px 1px rgba(#000, .1);
 
 }
 

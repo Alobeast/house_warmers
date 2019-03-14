@@ -130,6 +130,7 @@ $secondary-darker: #838ea0;
 
 .btnrev:hover {
   opacity: 0.6;
+  transition: all 0.2s ease-in;
 }
 
 .btnrev {
@@ -142,6 +143,7 @@ $secondary-darker: #838ea0;
 
 .btnprop:hover {
   opacity: 0.6;
+  transition: all 0.2s ease-in;
 }
 // .button.home:hover {
 //   a{
