@@ -3,6 +3,9 @@
     <i class="far fa-check-circle payment-confirm"></i>
     <h3 class="payment-content">Congratulations!</h3>
     <p class="payment-content">Your <%= humanized_money_with_symbol(@order.amount) %> deposit is now secured,</p>
-    <p class="payment-content"><%= @order.flat.landlord.first_name %> will shortly send your rental contract for signature.</p>
+    <p class="payment-content"><%= @order.flat.landlord.first_name %> will shortly send your rental contract for signature. <br>
+    A confirmation email will be sent to <%= current_user.email %></p>
+
+    <%= link_to "Home", root_path, class:"btn btn-ghost"  %>
   </div>
 </div>

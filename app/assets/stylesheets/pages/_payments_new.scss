@@ -5,15 +5,15 @@
 
 .payment-box {
 
-  background-color: #1C6E8C;
+  background-color: $blue;
   text-align: center;
   margin-top: 50px;
   border-radius: 6px;
-  box-shadow: 0 3px 7px 1px rgba(#000, .1);
+  box-shadow: 0 6px 7px 3px rgba(#000, .1);
   color: white;
   font-weight: lighter;
-  height: 460px;
-  width: 350px;
+  height: 550px;
+  width: 650px;
 }
 
 .payment-box .stripe-button-el {
@@ -22,7 +22,7 @@
 }
 
 .payment-confirm {
-  margin-top: 80px;
+  margin-top: 140px;
   font-size: 100px;
 }
 

@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 3px 7px 1px rgba(#000, .1);
   width: 800px;
-  height: 450px;
+  height: 600px;
   margin-top: 50px;
   border-radius: 5px;
   text-align: center;
@@ -14,7 +14,7 @@
   }
 
 .card-deposit > img {
-  height: 200px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -31,5 +31,10 @@
 }
 
 
+.deposit-description {
+    margin-top: 40px;
+}
 
-
+.amount {
+  margin-bottom: 14px;
+}
