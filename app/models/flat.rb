@@ -29,8 +29,8 @@ class Flat < ApplicationRecord
     average_area = reviews.blank? ? 0 : reviews.map(&:area_rating).sum / reviews.count
 
     average_long = (average_noise + average_condition + average_energy + average_landlord + average_plumbing + average_area) * 10 / 6
-    average = average_long.round
-    average / 10.0
+    average = average_long
+    average / 10
   end
 
 

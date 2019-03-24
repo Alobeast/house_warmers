@@ -60,7 +60,11 @@ class User < ApplicationRecord
 
   def friends_matched_tenancies(address)
     tenancies = tenancies_near(address)
-    friend_ids = friends.map { |f| f["id"] }
+    friend_ids = if friends
+                  friends.map { |f| f["id"] }
+                  else
+                  []
+                  end
     matched_friends = []
     tenancies.each do |t|
       if friend_ids.include?(t.user.uid)
